@@ -2,7 +2,7 @@
 
 Personal portfolio for Kristofor Figueiredo, focused on business analytics, technology sourcing, supply chain, sports analytics, and applied machine learning.
 
-The site includes a downloadable résumé, locally hosted profile photography, verified employer logos, an interactive global work map, technical case studies, and links to live project demonstrations and source repositories.
+The site includes locally hosted profile photography, employer and university logos, an interactive global work map, technical case studies, and links to live project demonstrations and source repositories.
 
 **Live site:** https://krisfigueiredo-ui.github.io/
 
@@ -22,11 +22,10 @@ The IT asset-risk page accompanies a University of Miami M.S. in Business Analyt
 
 ## Portfolio structure
 
-- `index.html` — résumé, experience, interactive work map, selected projects, and employer/client context
+- `index.html` — profile, experience, interactive work map, selected projects, and employer/client context
 - `projects.html` — methods-first case studies covering model design, validation, limitations, and team credit
 - `cnb-synthetic-dashboard.html` — confidentiality-safe IT asset lifecycle and risk capstone case study
 - `tractor-synthetic-inventory.html` — fictional SKU planning and inventory-policy demonstration
-- `assets/Kristofor_Figueiredo_Resume.pdf` — downloadable résumé
 
 ## Attribution
 
