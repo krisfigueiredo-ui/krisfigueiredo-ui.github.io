@@ -30,7 +30,7 @@ The IT asset-risk page accompanies a University of Miami M.S. in Business Analyt
 
 ## Attribution
 
-The blank world map is the CC0 [`WorldMap-Blank-Noborders.svg`](https://commons.wikimedia.org/wiki/File:WorldMap-Blank-Noborders.svg) from Wikimedia Commons. The Tractor wordmark is served from the company's official website asset. Employer, school, and capstone-partner marks identify publicly documented experience; all trademarks belong to their respective owners.
+The blank world map is the CC0 [`WorldMap-Blank-Noborders.svg`](https://commons.wikimedia.org/wiki/File:WorldMap-Blank-Noborders.svg) from Wikimedia Commons. University of Miami and West Virginia University marks use official university web assets. The Tractor wordmark is served from the company's official website asset. Employer, school, and capstone-partner marks identify documented experience; all trademarks belong to their respective owners.
 
 ## Stack
 

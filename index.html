@@ -58,6 +58,8 @@
     .button.primary{background:var(--forest);border-color:var(--forest);color:#fff}
     .button.primary:hover{background:#215046;border-color:#215046}
     .button svg{width:14px;height:14px}
+    .social-link{display:inline-flex;align-items:center;gap:7px}
+    .social-link svg{flex:0 0 auto;width:15px;height:15px}
     .portrait-card{position:relative}
     .portrait-frame{aspect-ratio:4/4.6;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#d8d8d4;box-shadow:var(--shadow)}
     .portrait-frame img{width:100%;height:100%;object-fit:cover;object-position:center 28%}
@@ -124,7 +126,8 @@
     .map-point.point-mixed::before{background:conic-gradient(#8ad4b9 0 33%,#f2c35b 33% 66%,#78b9dc 66% 100%)}
     .map-point:hover::before,.map-point.active::before{transform:scale(1.35);background:#fff}
     .map-point:focus-visible{outline:2px solid #dff5ed;outline-offset:2px;border-radius:50%}
-    .map-point.current::after{content:"Current";position:absolute;left:28px;top:4px;font-family:var(--mono);font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:#d8eee6;background:#173d33;border:1px solid #376457;border-radius:5px;padding:4px 6px;white-space:nowrap}
+    .map-point.current::after{content:"Current";position:absolute;left:28px;top:4px;display:none;font-family:var(--mono);font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:#d8eee6;background:#173d33;border:1px solid #376457;border-radius:5px;padding:4px 6px;white-space:nowrap}
+    .map-point.current.active::after{display:block}
     .map-panel{padding:34px 30px;border-left:1px solid #29423b;background:#142a24;display:flex;flex-direction:column}
     .map-panel .section-kicker{color:#90b8aa;padding:0;margin-bottom:18px}
     .map-panel h3{font-size:28px;line-height:1.1;letter-spacing:-.035em;margin:0 0 6px}
@@ -151,7 +154,12 @@
     .tags{display:flex;flex-wrap:wrap;gap:7px}
     .tag{font-family:var(--mono);font-size:9px;color:#46544f;border:1px solid var(--line);background:var(--paper);border-radius:6px;padding:6px 8px}
     .education{margin-left:260px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .school{border-top:1px solid var(--line);padding:22px 0}
+    .school{border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
+    .school-logo{height:100px;display:flex;align-items:center;padding:20px 22px;border-bottom:1px solid var(--line)}
+    .school-logo img{display:block;max-width:100%;max-height:58px;object-fit:contain;object-position:left center}
+    .school.wvu .school-logo{background:#002855;border-bottom-color:#173f6b}
+    .school.wvu .school-logo img{max-height:62px}
+    .school-body{padding:21px 22px 23px}
     .school h3{font-size:17px;margin:0 0 4px}
     .degree{font-size:13px;color:#4e5c57}
     .school-meta{font-family:var(--mono);font-size:9px;color:var(--muted);margin-top:12px;text-transform:uppercase;letter-spacing:.055em}
@@ -210,8 +218,8 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 20h14"/></svg>
             Download résumé
           </a>
-          <a class="button" href="https://www.linkedin.com/in/kristofor-f/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="button" href="https://github.com/krisfigueiredo-ui" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="button social-link" href="https://www.linkedin.com/in/kristofor-f/" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.98h3.42v1.57h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29ZM5.32 7.41a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.1 20.45H3.54V8.98H7.1v11.47Z"/></svg>LinkedIn</a>
+          <a class="button social-link" href="https://github.com/krisfigueiredo-ui" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.49v-1.91c-2.78.62-3.37-1.21-3.37-1.21-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.57 2.35 1.12 2.92.86.09-.66.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 8.92a9.3 9.3 0 0 1 2.5.34c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.35 4.8-4.58 5.05.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49A10.24 10.24 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/></svg>GitHub</a>
         </div>
       </div>
       <aside class="portrait-card" aria-label="Kristofor Figueiredo's current role">
@@ -231,9 +239,9 @@
       </div>
       <div class="facts">
         <div class="fact"><strong>3.9 / 4.0</strong><span>University of Miami MSBA GPA</span></div>
-        <div class="fact"><strong>2026</strong><span>M.S. in Business Analytics</span></div>
-        <div class="fact"><strong>5</strong><span>Organizations across the U.S. and Australia</span></div>
-        <div class="fact"><strong>9</strong><span>Public case studies and live builds</span></div>
+        <div class="fact"><strong>M.S.B.A.</strong><span>Business Analytics · University of Miami</span></div>
+        <div class="fact"><strong>B.S.B.A.</strong><span>Supply Chain Management · WVU</span></div>
+        <div class="fact"><strong>Finance</strong><span>Minor · West Virginia University</span></div>
       </div>
       <div class="logo-rail" aria-label="Organizations where Kristofor has worked">
         <a class="logo-item" href="https://www.linkedin.com/company/kroger/" target="_blank" rel="noreferrer"><span class="logo-box"><img src="assets/logo-kroger.jpg" alt="Kroger logo" width="100" height="100"></span><span><strong>Kroger</strong><span>Technology sourcing · 2026 Fortune 500 #27</span></span></a>
@@ -284,8 +292,8 @@
             <img src="assets/world-map-cc0.svg" alt="World map" width="2000" height="1001">
             <button type="button" class="map-point current active" style="left:26%;top:34%" data-location="cincinnati" aria-label="Cincinnati, Ohio, current work location" aria-pressed="true"></button>
             <button type="button" class="map-point point-mixed" style="left:27.5%;top:42%" data-location="miami" aria-label="Coral Gables and Miami, work, graduate education, and capstone location" aria-pressed="false"></button>
-            <button type="button" class="map-point point-education" style="left:28.4%;top:33%" data-location="morgantown" aria-label="Morgantown, West Virginia, undergraduate education" aria-pressed="false"></button>
-            <button type="button" class="map-point point-capstone" style="left:20.5%;top:33%" data-location="colorado" aria-label="Greenwood Village, Colorado, capstone partner location" aria-pressed="false"></button>
+            <button type="button" class="map-point point-mixed" style="left:28.4%;top:33%" data-location="morgantown" aria-label="Morgantown, West Virginia, undergraduate education and remote capstone location" aria-pressed="false"></button>
+            <button type="button" class="map-point point-capstone" style="left:27.1%;top:31%" data-location="columbus" aria-label="Columbus, Ohio, Tractor Beverage capstone site visit" aria-pressed="false"></button>
             <button type="button" class="map-point" style="left:89%;top:72%" data-location="sydney" aria-label="Sydney, Australia, work location" aria-pressed="false"></button>
           </div>
           <div class="map-legend" aria-label="Map point legend"><span><i></i>Work</span><span><i class="legend-education"></i>Education</span><span><i class="legend-capstone"></i>Capstone</span></div>
@@ -300,7 +308,7 @@
             <button type="button" class="map-location active" data-location="cincinnati" aria-pressed="true">Cincinnati</button>
             <button type="button" class="map-location" data-location="miami" aria-pressed="false">Miami</button>
             <button type="button" class="map-location" data-location="morgantown" aria-pressed="false">Morgantown</button>
-            <button type="button" class="map-location" data-location="colorado" aria-pressed="false">Colorado</button>
+            <button type="button" class="map-location" data-location="columbus" aria-pressed="false">Columbus</button>
             <button type="button" class="map-location" data-location="sydney" aria-pressed="false">Sydney</button>
           </div>
           <div class="map-credit">Map base: <a href="https://commons.wikimedia.org/wiki/File:WorldMap-Blank-Noborders.svg" target="_blank" rel="noreferrer">Wikimedia Commons, CC0</a>.</div>
@@ -310,7 +318,7 @@
 
     <section class="section" aria-labelledby="engagements-heading">
       <div class="section-head">
-        <div class="section-kicker">Graduate capstones</div>
+        <div class="section-kicker">Enterprise capstones</div>
         <div><h2 class="section-title" id="engagements-heading">Real-world capstones with enterprise partners.</h2><p class="section-intro">Applied analytics projects in IT asset risk and inventory planning, completed with City National Bank of Florida and Tractor Beverage Company.</p></div>
       </div>
       <div class="engagements">
@@ -320,7 +328,7 @@
         </a>
         <a class="engagement tractor" href="tractor-synthetic-inventory.html" target="_blank" rel="noreferrer" aria-label="Open synthetic Tractor inventory planning dashboard">
           <img class="engagement-logo" src="assets/logo-tractor-official.svg" alt="Tractor Beverage Company" loading="lazy">
-          <span class="engagement-copy"><span class="capstone-label">West Virginia University capstone</span><strong>Inventory planning and safety stock</strong><span>Led a seven-person team developing a reusable SKU-level inventory strategy using ABC segmentation, service-level targets, reorder logic, and simulation.</span></span>
+          <span class="engagement-copy"><span class="capstone-label">West Virginia University capstone</span><strong>Inventory planning and safety stock</strong><span>Led a seven-person remote team from WVU, with a Columbus site visit, developing a reusable SKU-level inventory strategy using ABC segmentation, reorder logic, and simulation.</span></span>
         </a>
       </div>
     </section>
@@ -334,7 +342,7 @@
         <article class="project"><div class="project-meta"><span>Sports analytics</span><span>2026</span></div><h3>MLB Predictor</h3><div class="method-list"><span class="method-pill">Logistic regression</span><span class="method-pill">Elo</span><span class="method-pill">Poisson</span><span class="method-pill">Calibration</span></div><p>A live research dashboard combining baseball ratings, scoring distributions, calibrated probabilities, market-implied odds, Kelly sizing, and downloadable paper-trading records.</p><div class="project-credit">Independent project. Research and paper trading only.</div><div class="project-links"><a href="https://krisfigueiredo-ui.github.io/MLB-Predictor/" target="_blank" rel="noreferrer">Live app</a><a href="projects.html#mlb">Methods</a><a href="https://github.com/krisfigueiredo-ui/MLB-Predictor" target="_blank" rel="noreferrer">Repository</a></div></article>
         <article class="project"><div class="project-meta"><span>Systematic research</span><span>2026</span></div><h3>Quant Desk</h3><div class="method-list"><span class="method-pill">Factor models</span><span class="method-pill">Walk-forward</span><span class="method-pill">Bootstrap</span><span class="method-pill">ML</span></div><p>A paper-trading workspace for cross-sectional signals, risk-aware allocation, purged validation, read-only account monitoring, and dry-run operations.</p><div class="project-credit">Independent project. No live-money execution path.</div><div class="project-links"><a href="https://krisfigueiredo-ui.github.io/Quant-Desk/" target="_blank" rel="noreferrer">Live app</a><a href="projects.html#quant">Methods</a><a href="https://github.com/krisfigueiredo-ui/Quant-Desk" target="_blank" rel="noreferrer">Repository</a></div></article>
         <article class="project"><div class="project-meta"><span>RAG &amp; talent analytics</span><span>2026</span></div><h3>HireSense</h3><div class="method-list"><span class="method-pill">RAG</span><span class="method-pill">Embeddings</span><span class="method-pill">Cosine similarity</span><span class="method-pill">LLM</span></div><p>A candidate-analysis prototype combining document retrieval, similarity scoring, explainable rankings, and structured interview prompts.</p><div class="project-credit">Team: Waleed El-Jack, Kristofor Figueiredo, Kevin Ordet, and Jamie Shook.</div><div class="project-links"><a href="https://krisfigueiredo-ui.github.io/Hiresense-AI-umiami-/" target="_blank" rel="noreferrer">Live app</a><a href="projects.html#hiresense">Methods</a><a href="https://github.com/krisfigueiredo-ui/Hiresense-AI-umiami-" target="_blank" rel="noreferrer">Repository</a></div></article>
-        <article class="project"><div class="project-meta"><span>Real-world capstone</span><span>2025</span></div><h3>Tractor Inventory Planning</h3><div class="method-list"><span class="method-pill">ABC analysis</span><span class="method-pill">Safety stock</span><span class="method-pill">Forecasting</span><span class="method-pill">Simulation</span></div><p>Led a seven-person team developing a SKU-level safety-stock strategy for a 27-product portfolio. Backtesting indicated approximately 80% of prior stockouts on key items could have been prevented while improving return on inventory investment by more than 20%.</p><div class="project-credit">West Virginia University capstone · Project Team Leader</div><div class="project-links"><a href="tractor-synthetic-inventory.html" target="_blank" rel="noreferrer">Dashboard</a><a href="projects.html#tractor">Methods</a><a href="https://github.com/krisfigueiredo-ui/enterprise-analytics-capstones" target="_blank" rel="noreferrer">Repository</a></div></article>
+        <article class="project"><div class="project-meta"><span>Real-world capstone</span><span>2025</span></div><h3>Tractor Inventory Planning</h3><div class="method-list"><span class="method-pill">ABC analysis</span><span class="method-pill">Safety stock</span><span class="method-pill">Forecasting</span><span class="method-pill">Simulation</span></div><p>Led a seven-person remote team at WVU developing a SKU-level safety-stock strategy for a 27-product portfolio, including a project site visit in Columbus, Ohio. Backtesting indicated approximately 80% of prior stockouts on key items could have been prevented while improving return on inventory investment by more than 20%.</p><div class="project-credit">West Virginia University capstone · Project Team Leader</div><div class="project-links"><a href="tractor-synthetic-inventory.html" target="_blank" rel="noreferrer">Dashboard</a><a href="projects.html#tractor">Methods</a><a href="https://github.com/krisfigueiredo-ui/enterprise-analytics-capstones" target="_blank" rel="noreferrer">Repository</a></div></article>
         <article class="project"><div class="project-meta"><span>Database architecture</span><span>WVU</span></div><h3>Surfside Surfboards</h3><div class="method-list"><span class="method-pill">MySQL</span><span class="method-pill">3NF</span><span class="method-pill">Views</span><span class="method-pill">Constraints</span></div><p>A normalized operating model for customers, board configurations, reusable components, orders, reviews, historical price snapshots, and quarterly reporting.</p><div class="project-credit">Original concept and business rules by Kristofor Figueiredo; SQL implementation reconstructed from the surviving brief.</div><div class="project-links"><a href="https://krisfigueiredo-ui.github.io/surfside-surfboards-database/" target="_blank" rel="noreferrer">Schema reference</a><a href="projects.html#surfside">Methods</a><a href="https://github.com/krisfigueiredo-ui/surfside-surfboards-database" target="_blank" rel="noreferrer">Repository</a></div></article>
         <article class="project"><div class="project-meta"><span>Big data &amp; operations</span><span>UMiami</span></div><h3>Coffee Operations Modeling</h3><div class="method-list"><span class="method-pill">PySpark</span><span class="method-pill">Decision trees</span><span class="method-pill">Logistic regression</span><span class="method-pill">AUC</span></div><p>Modeled wait time and rewards membership across approximately 1.96 million transaction records, comparing interpretable and nonlinear approaches.</p><div class="project-credit">Team: Jamie Shook, Kristofor Figueiredo, and Kevin Ordet. The missing source dataset is disclosed in the repository.</div><div class="project-links"><a href="projects.html#coffee">Case study</a><a href="https://github.com/krisfigueiredo-ui/coffee-operations-pyspark" target="_blank" rel="noreferrer">Repository</a></div></article>
         <article class="project"><div class="project-meta"><span>Time series</span><span>UMiami</span></div><h3>Retail Job Openings Forecast</h3><div class="method-list"><span class="method-pill">SARIMA</span><span class="method-pill">ETS</span><span class="method-pill">STL</span><span class="method-pill">Rolling CV</span></div><p>A 12-month U.S. retail job-openings forecast comparing seasonal statistical models and a weighted ensemble under rolling-origin validation.</p><div class="project-credit">Team 67: Kristofor Figueiredo, Jamie Shook, Jorge Palau, and Gabriella Lerario.</div><div class="project-links"><a href="projects.html#retail-forecast">Case study</a><a href="https://github.com/krisfigueiredo-ui/retail-job-openings-forecast" target="_blank" rel="noreferrer">Repository</a></div></article>
@@ -357,8 +365,8 @@
     <section class="section" id="education" aria-labelledby="education-heading">
       <div class="section-head"><div class="section-kicker">Education</div><h2 class="section-title" id="education-heading">Business analytics and supply chain.</h2></div>
       <div class="education">
-        <article class="school"><h3>University of Miami Herbert Business School</h3><div class="degree">M.S. in Business Analytics</div><div class="school-meta">May 2026 · GPA 3.9 / 4.0 · Award of Academic Merit</div></article>
-        <article class="school"><h3>West Virginia University</h3><div class="degree">B.S.B.A., Supply Chain Management · Finance minor</div><div class="school-meta">May 2025 · President's List · Dean's List</div></article>
+        <article class="school"><div class="school-logo"><img src="assets/logo-university-miami.png" alt="University of Miami" width="640" height="160" loading="lazy"></div><div class="school-body"><h3>University of Miami Herbert Business School</h3><div class="degree">M.S. in Business Analytics</div><div class="school-meta">May 2026 · GPA 3.9 / 4.0 · Award of Academic Merit</div></div></article>
+        <article class="school wvu"><div class="school-logo"><img src="assets/logo-west-virginia-university.svg" alt="West Virginia University" width="1484" height="372" loading="lazy"></div><div class="school-body"><h3>West Virginia University</h3><div class="degree">B.S.B.A., Supply Chain Management · Finance minor</div><div class="school-meta">May 2025 · President's List · Dean's List</div></div></article>
       </div>
     </section>
 
@@ -368,7 +376,7 @@
     </section>
   </main>
 
-  <footer class="shell"><span>Kristofor Figueiredo · Cincinnati, Ohio</span><span><a href="https://github.com/krisfigueiredo-ui" target="_blank" rel="noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/kristofor-f/" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="assets/Kristofor_Figueiredo_Resume.pdf" download>Résumé</a></span></footer>
+  <footer class="shell"><span>Kristofor Figueiredo · Cincinnati, Ohio</span><span><a class="social-link" href="https://github.com/krisfigueiredo-ui" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.49v-1.91c-2.78.62-3.37-1.21-3.37-1.21-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.57 2.35 1.12 2.92.86.09-.66.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 8.92a9.3 9.3 0 0 1 2.5.34c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.35 4.8-4.58 5.05.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49A10.24 10.24 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/></svg>GitHub</a> · <a class="social-link" href="https://www.linkedin.com/in/kristofor-f/" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.98h3.42v1.57h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29ZM5.32 7.41a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.1 20.45H3.54V8.98H7.1v11.47Z"/></svg>LinkedIn</a> · <a href="assets/Kristofor_Figueiredo_Resume.pdf" download>Résumé</a></span></footer>
   <script>
     const workLocations = {
       cincinnati: {
@@ -382,22 +390,22 @@
         status: "Graduate education · work · capstone",
         copy: "Graduate study in business analytics, baseball performance analysis, athletic tutoring, and an IT asset lifecycle capstone.",
         orgs: [
-          { name: "University of Miami", logo: "assets/logo-miami-hurricanes.jpg", detail: "M.S. Business Analytics · 3.9 GPA" },
+          { name: "University of Miami", logo: "assets/logo-university-miami.png", detail: "M.S. Business Analytics · 3.9 GPA" },
           { name: "Miami Hurricanes Athletics", logo: "assets/logo-miami-hurricanes.jpg", detail: "Baseball analytics · Athletic tutoring" },
           { name: "City National Bank of Florida", logo: "assets/logo-cnb.svg", detail: "IT asset risk capstone · Approximately 4,200 assets" }
         ]
       },
       morgantown: {
         city: "Morgantown, West Virginia",
-        status: "Undergraduate education · United States",
-        copy: "Completed a B.S.B.A. in Supply Chain Management with a Finance minor, including President's List and Dean's List recognition.",
-        orgs: [{ name: "West Virginia University", mark: "WVU", detail: "B.S.B.A. Supply Chain Management · Finance minor" }]
+        status: "Undergraduate education · remote capstone",
+        copy: "Completed a B.S.B.A. in Supply Chain Management with a Finance minor and led the remote Tractor Beverage capstone team from WVU.",
+        orgs: [{ name: "West Virginia University", logo: "assets/logo-west-virginia-university.svg", onDark: true, detail: "B.S.B.A. Supply Chain Management · Finance minor" }]
       },
-      colorado: {
-        city: "Greenwood Village, Colorado",
-        status: "Real-world capstone partner · United States",
-        copy: "Led a seven-person capstone team that developed a SKU-level safety-stock strategy across a 27-product portfolio using ABC analysis, service levels, bootstrap resampling, and Monte Carlo simulation.",
-        orgs: [{ name: "Tractor Beverage Company", logo: "assets/logo-tractor-official.svg", onDark: true, detail: "Safety Stock Optimization · Project Team Leader" }]
+      columbus: {
+        city: "Columbus, Ohio",
+        status: "Capstone site visit · United States",
+        copy: "Visited Tractor Beverage Company in Columbus as part of the remote WVU capstone, connecting the inventory analysis with the partner's operating environment.",
+        orgs: [{ name: "Tractor Beverage Company", logo: "assets/logo-tractor-official.svg", onDark: true, detail: "Inventory planning capstone · Site visit" }]
       },
       sydney: {
         city: "Sydney, Australia",
