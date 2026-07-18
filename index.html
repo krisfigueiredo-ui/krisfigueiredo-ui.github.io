@@ -46,6 +46,7 @@
     .nav-links{display:flex;align-items:center;gap:24px}
     .nav-links a{font-size:12px;font-weight:560;color:var(--muted);text-decoration:none;transition:color .15s,background .15s}
     .nav-links a:hover{color:var(--ink)}
+    .nav-links .nav-resume{color:var(--accent);border:1px solid #bdcbc5;padding:7px 10px;border-radius:8px}
     .nav-links .nav-cta{color:#fff;background:var(--forest);padding:8px 12px;border-radius:8px}
     .hero{min-height:620px;padding:72px 0 64px;display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:82px;align-items:center;border-bottom:1px solid var(--line)}
     .eyebrow{font-family:var(--mono);font-size:10px;font-weight:650;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
@@ -87,7 +88,8 @@
     .job-date{font-family:var(--mono);font-size:10px;color:var(--muted);padding-top:6px}
     .job-logo{width:48px;height:48px;border-radius:10px;border:1px solid #e0e2dc;background:#fff;object-fit:contain}
     .job h3{font-size:18px;letter-spacing:-.025em;margin:0 0 2px;font-weight:650}
-    .job-role{font-size:12px;font-weight:610;color:var(--accent);margin-bottom:11px}
+    .job-role{font-size:12px;font-weight:610;color:var(--accent);margin-bottom:8px}
+    .company-ranking{display:inline-flex;align-items:center;margin:0 0 11px;padding:4px 7px;border:1px solid #cbd8d2;border-radius:6px;color:#38554c;font:650 9px var(--mono);text-decoration:none}
     .job p{font-size:13px;color:#4e5c57;margin:0;max-width:720px}
     .engagements{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-left:260px}
     .engagement{min-height:218px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;display:flex;align-items:center;justify-content:space-between;gap:26px;text-decoration:none}
@@ -112,14 +114,17 @@
     .method-list{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 18px}
     .method-pill{font-size:9px;font-weight:650;color:#315249;background:#e6efeb;border:1px solid #cfdfd9;border-radius:999px;padding:4px 7px;line-height:1}
     .map-card{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(285px,.65fr);overflow:hidden;border:1px solid #233a34;border-radius:14px;background:#10241f;color:#eef6f2;box-shadow:0 16px 40px rgba(16,36,31,.12)}
-    .map-stage{position:relative;min-height:560px;padding:28px;background:radial-gradient(circle at 62% 42%,rgba(65,126,106,.18),transparent 38%),#10241f}
-    .map-stage img{width:100%;height:100%;min-height:500px;object-fit:contain;opacity:.72;filter:invert(93%) sepia(8%) saturate(172%) hue-rotate(105deg) brightness(100%) contrast(90%)}
-    .map-point{position:absolute;width:16px;height:16px;padding:0;border:3px solid #10241f;border-radius:50%;background:#8ad4b9;box-shadow:0 0 0 1px rgba(197,240,224,.65);cursor:pointer;transform:translate(-50%,-50%);transition:transform .16s,background .16s}
-    .map-point.education{background:#f2c35b;box-shadow:0 0 0 1px rgba(255,222,146,.72)}
-    .map-point.capstone{background:#78b9dc;box-shadow:0 0 0 1px rgba(176,220,244,.72)}
-    .map-point.mixed{background:conic-gradient(#8ad4b9 0 33%,#f2c35b 33% 66%,#78b9dc 66% 100%)}
-    .map-point:hover,.map-point.active{transform:translate(-50%,-50%) scale(1.28);background:#fff}
-    .map-point.current::after{content:"Current";position:absolute;left:20px;top:-8px;font-family:var(--mono);font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:#d8eee6;background:#173d33;border:1px solid #376457;border-radius:5px;padding:4px 6px;white-space:nowrap}
+    .map-stage{position:relative;display:grid;align-items:center;min-width:0;padding:26px 24px 64px;background:radial-gradient(circle at 62% 42%,rgba(65,126,106,.18),transparent 38%),#10241f}
+    .map-visual{position:relative;width:100%;aspect-ratio:2/1}
+    .map-visual>img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:.72;filter:invert(93%) sepia(8%) saturate(172%) hue-rotate(105deg) brightness(100%) contrast(90%)}
+    .map-point{position:absolute;width:32px;height:32px;padding:0;border:0;background:transparent;cursor:pointer;transform:translate(-50%,-50%);display:grid;place-items:center}
+    .map-point::before{content:"";width:14px;height:14px;border:3px solid #10241f;border-radius:50%;background:#8ad4b9;box-shadow:0 0 0 1px rgba(197,240,224,.65);transition:transform .16s,background .16s}
+    .map-point.point-education::before{background:#f2c35b;box-shadow:0 0 0 1px rgba(255,222,146,.72)}
+    .map-point.point-capstone::before{background:#78b9dc;box-shadow:0 0 0 1px rgba(176,220,244,.72)}
+    .map-point.point-mixed::before{background:conic-gradient(#8ad4b9 0 33%,#f2c35b 33% 66%,#78b9dc 66% 100%)}
+    .map-point:hover::before,.map-point.active::before{transform:scale(1.35);background:#fff}
+    .map-point:focus-visible{outline:2px solid #dff5ed;outline-offset:2px;border-radius:50%}
+    .map-point.current::after{content:"Current";position:absolute;left:28px;top:4px;font-family:var(--mono);font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:#d8eee6;background:#173d33;border:1px solid #376457;border-radius:5px;padding:4px 6px;white-space:nowrap}
     .map-panel{padding:34px 30px;border-left:1px solid #29423b;background:#142a24;display:flex;flex-direction:column}
     .map-panel .section-kicker{color:#90b8aa;padding:0;margin-bottom:18px}
     .map-panel h3{font-size:28px;line-height:1.1;letter-spacing:-.035em;margin:0 0 6px}
@@ -130,9 +135,10 @@
     .map-org img{width:32px;height:32px;object-fit:contain;border-radius:7px;background:#fff;border:1px solid #436058}
     .map-org img.on-dark{background:#173d33;padding:5px}
     .map-mark{width:32px;height:32px;border-radius:7px;background:#002855;color:#eaaa00;display:grid;place-items:center;font:800 10px var(--sans);border:1px solid #436058}
+    .map-org-copy{display:grid;gap:2px;min-width:0}.map-org-copy strong{font-size:10px}.map-org-copy span{font-size:9px;color:#a9c2b9;line-height:1.35}.map-org-copy a{color:#bfe1d5;text-decoration:none}
     .map-legend{position:absolute;left:24px;bottom:20px;display:flex;flex-wrap:wrap;gap:12px;background:rgba(12,34,28,.86);border:1px solid #35544a;border-radius:8px;padding:8px 10px}
     .map-legend span{display:flex;align-items:center;gap:6px;font-size:8px;color:#c3d9d1;text-transform:uppercase;letter-spacing:.06em}
-    .map-legend i{width:8px;height:8px;border-radius:50%;background:#8ad4b9}.map-legend i.education{background:#f2c35b}.map-legend i.capstone{background:#78b9dc}
+    .map-legend i{width:8px;height:8px;border-radius:50%;background:#8ad4b9}.map-legend i.legend-education{background:#f2c35b}.map-legend i.legend-capstone{background:#78b9dc}
     .map-locations{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
     .map-location{border:1px solid #3b5a50;background:transparent;color:#c9ddd5;border-radius:7px;padding:7px 9px;font:600 9px var(--sans);cursor:pointer}
     .map-location.active{background:#e9f4ef;color:#17372f;border-color:#e9f4ef}
@@ -158,18 +164,18 @@
     footer{padding:0 0 34px;display:flex;justify-content:space-between;gap:20px;font-family:var(--mono);font-size:9px;color:var(--muted)}
     @media(max-width:980px){
       .hero{grid-template-columns:minmax(0,1fr) 300px;gap:52px}.logo-rail{grid-template-columns:repeat(3,1fr)}
-      .timeline,.engagements,.skill-grid,.education{margin-left:0}.projects{grid-template-columns:1fr 1fr}.map-card{grid-template-columns:1fr}.map-panel{border-left:0;border-top:1px solid #29423b}.map-stage{min-height:470px}.map-stage img{min-height:420px}
+      .timeline,.engagements,.skill-grid,.education{margin-left:0}.projects{grid-template-columns:1fr 1fr}.map-card{grid-template-columns:1fr}.map-panel{border-left:0;border-top:1px solid #29423b}
     }
     @media(max-width:760px){
       .hero{grid-template-columns:1fr;gap:38px;padding-top:54px}.portrait-card{max-width:380px}.section-head{grid-template-columns:1fr;gap:10px}
       .facts{grid-template-columns:1fr 1fr}.fact:nth-child(2){border-right:0}.fact:nth-child(-n+2){border-bottom:1px solid var(--line)}
-      .engagements{grid-template-columns:1fr}.job{grid-template-columns:118px 50px 1fr;gap:18px}.map-stage{min-height:390px;padding:16px}.map-stage img{min-height:350px}
+      .engagements{grid-template-columns:1fr}.job{grid-template-columns:118px 50px 1fr;gap:18px}.map-stage{padding:20px 18px 60px}
     }
     @media(max-width:600px){
-      .shell{width:min(100% - 30px,1180px)}.nav-links a:not(.nav-cta){display:none}.hero{min-height:0;padding:46px 0 48px}h1{font-size:clamp(46px,15vw,64px)}
+      .shell{width:min(100% - 30px,1180px)}.nav-links a:not(.nav-cta):not(.nav-resume){display:none}.hero{min-height:0;padding:46px 0 48px}h1{font-size:clamp(46px,15vw,64px)}
       .hero-lede{font-size:17px}.portrait-card{max-width:none}.section{padding:52px 0}.facts,.logo-rail,.projects,.skill-grid,.education{grid-template-columns:1fr}
       .fact{border-right:0;border-bottom:1px solid var(--line)}.fact:last-child{border-bottom:0}.job{grid-template-columns:46px 1fr;gap:14px}.job-date{grid-column:1/-1;padding:0}.job-logo{width:42px;height:42px}
-      .engagement{align-items:flex-start;flex-direction:column}.engagement-logo{width:min(230px,80%)}.project{min-height:auto}.contact-band{margin:52px 0;padding:30px 24px;align-items:flex-start;flex-direction:column}.contact-actions{justify-content:flex-start}footer{flex-direction:column}.map-stage{min-height:250px;padding:12px}.map-stage img{min-height:220px}.map-point{width:15px;height:15px}.map-point.current::after{display:none}.map-panel{padding:26px 22px}
+      .engagement{align-items:flex-start;flex-direction:column}.engagement-logo{width:min(230px,80%)}.project{min-height:auto}.contact-band{margin:52px 0;padding:30px 24px;align-items:flex-start;flex-direction:column}.contact-actions{justify-content:flex-start}footer{flex-direction:column}.map-stage{padding:14px 10px 58px}.map-point{width:28px;height:28px}.map-point.current::after{display:none}.map-panel{padding:26px 22px}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
   </style>
@@ -187,7 +193,7 @@
         <a href="#work">Projects</a>
         <a href="projects.html">Methods</a>
         <a href="#education">Education</a>
-        <a href="assets/Kristofor_Figueiredo_Resume.pdf" download>Résumé</a>
+        <a class="nav-resume" href="assets/Kristofor_Figueiredo_Resume.pdf" download>Download résumé</a>
         <a class="nav-cta" href="mailto:krisfigueiredo2002@gmail.com">Contact</a>
       </div>
     </nav>
@@ -198,7 +204,7 @@
       <div>
         <div class="eyebrow">Business analytics · technology sourcing · supply chain</div>
         <h1 id="hero-heading">Kristofor Figueiredo</h1>
-        <p class="hero-lede">I turn complex commercial and operational data into practical decisions,across sourcing, supply chain, performance analytics, and applied machine learning.</p>
+        <p class="hero-lede">I turn complex commercial and operational data into practical decisions across sourcing, supply chain, performance analytics, and applied machine learning.</p>
         <div class="hero-actions">
           <a class="button primary" href="assets/Kristofor_Figueiredo_Resume.pdf" download aria-label="Download Kristofor Figueiredo's resume as a PDF">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 20h14"/></svg>
@@ -212,7 +218,7 @@
         <div class="portrait-frame"><img src="assets/kristofor-figueiredo.jpg" alt="Kristofor Figueiredo" width="800" height="800"></div>
         <div class="role-card">
           <div class="current">Current role</div>
-          <strong>Sourcing Category Management Analyst , Technology</strong>
+          <strong>Sourcing Category Management Analyst - Technology</strong>
           <span>The Kroger Co. · Cincinnati, Ohio</span>
         </div>
       </aside>
@@ -221,7 +227,7 @@
     <section class="section" aria-labelledby="profile-heading">
       <div class="section-head">
         <div class="section-kicker">Profile</div>
-        <div><h2 class="section-title" id="profile-heading">Commercial judgment, backed by analytical depth.</h2><p class="section-intro">Experience across enterprise sourcing, athletic performance, retail operations, and global supply chain,verified against my public LinkedIn profile and résumé.</p></div>
+        <div><h2 class="section-title" id="profile-heading">Analytics across sourcing, operations, and supply chain.</h2><p class="section-intro">Experience spanning technology sourcing, collegiate athletics analytics, retail operations, and supply-chain analysis in the United States and Australia.</p></div>
       </div>
       <div class="facts">
         <div class="fact"><strong>3.9 / 4.0</strong><span>University of Miami MSBA GPA</span></div>
@@ -230,10 +236,10 @@
         <div class="fact"><strong>9</strong><span>Public case studies and live builds</span></div>
       </div>
       <div class="logo-rail" aria-label="Organizations where Kristofor has worked">
-        <a class="logo-item" href="https://www.linkedin.com/company/kroger/" target="_blank" rel="noreferrer"><span class="logo-box"><img src="assets/logo-kroger.jpg" alt="Kroger logo" width="100" height="100"></span><span><strong>Kroger</strong><span>Technology sourcing</span></span></a>
+        <a class="logo-item" href="https://www.linkedin.com/company/kroger/" target="_blank" rel="noreferrer"><span class="logo-box"><img src="assets/logo-kroger.jpg" alt="Kroger logo" width="100" height="100"></span><span><strong>Kroger</strong><span>Technology sourcing · 2026 Fortune 500 #27</span></span></a>
         <a class="logo-item" href="https://www.linkedin.com/company/miami-hurricanes/" target="_blank" rel="noreferrer"><span class="logo-box"><img src="assets/logo-miami-hurricanes.jpg" alt="Miami Hurricanes Athletics logo" width="100" height="100"></span><span><strong>Miami Hurricanes</strong><span>Data analytics</span></span></a>
         <a class="logo-item" href="https://www.linkedin.com/company/12359783/" target="_blank" rel="noreferrer"><span class="logo-box"><img src="assets/logo-rebel-sport.jpg" alt="Rebel Sport logo" width="100" height="100"></span><span><strong>Rebel Sport</strong><span>Retail operations</span></span></a>
-        <a class="logo-item" href="https://www.linkedin.com/company/woolworths-group/" target="_blank" rel="noreferrer"><span class="logo-box"><img src="assets/logo-woolworths.jpg" alt="Woolworths Group logo" width="100" height="100"></span><span><strong>Woolworths Group</strong><span>Supply chain</span></span></a>
+        <a class="logo-item" href="https://www.linkedin.com/company/woolworths-group/" target="_blank" rel="noreferrer"><span class="logo-box"><img src="assets/logo-woolworths.jpg" alt="Woolworths Group logo" width="100" height="100"></span><span><strong>Woolworths Group</strong><span>Supply chain · Fortune Global 500 #345</span></span></a>
         <a class="logo-item" href="https://www.linkedin.com/company/emlgroup/" target="_blank" rel="noreferrer"><span class="logo-box"><img src="assets/logo-eml.jpg" alt="EML logo" width="100" height="100"></span><span><strong>EML</strong><span>Finance &amp; people</span></span></a>
       </div>
     </section>
@@ -241,28 +247,28 @@
     <section class="section" id="experience" aria-labelledby="experience-heading">
       <div class="section-head">
         <div class="section-kicker">Experience</div>
-        <h2 class="section-title" id="experience-heading">Analytics built for real operating decisions.</h2>
+        <h2 class="section-title" id="experience-heading">Professional experience.</h2>
       </div>
       <div class="timeline">
         <article class="job">
-          <div class="job-date">Jun 2026 , Present</div><img class="job-logo" src="assets/logo-kroger.jpg" alt="" width="100" height="100">
-          <div><h3>The Kroger Co.</h3><div class="job-role">Sourcing Category Management Analyst , Technology</div><p>Supports technology sourcing and category management through spend analysis, supplier evaluation, stakeholder coordination, and commercially grounded decision support.</p></div>
+          <div class="job-date">Jun 2026 - Present</div><img class="job-logo" src="assets/logo-kroger.jpg" alt="" width="100" height="100">
+          <div><h3>The Kroger Co.</h3><div class="job-role">Sourcing Category Management Analyst - Technology</div><a class="company-ranking" href="https://fortune.com/ranking/fortune500/2026/" target="_blank" rel="noreferrer">2026 Fortune 500 · No. 27</a><p>Supports sourcing across enterprise hardware, software, and IT services. Builds spend analyses and supplier scorecards from Coupa and ServiceNow records, and partners with IT stakeholders on negotiations, vendor evaluation, and total cost of ownership.</p></div>
         </article>
         <article class="job">
-          <div class="job-date">Sep 2025 , May 2026</div><img class="job-logo" src="assets/logo-miami-hurricanes.jpg" alt="" width="100" height="100">
-          <div><h3>Miami Hurricanes Athletics</h3><div class="job-role">Data Analytics Intern, Baseball · Athletic Tutor &amp; Mentor</div><p>Translated performance data into coaching-ready insights and supported student-athletes in quantitative and business coursework. Public résumé-level summary only; internal dashboards, source data, and proprietary deliverables are not published.</p></div>
+          <div class="job-date">Sep 2025 - May 2026</div><img class="job-logo" src="assets/logo-miami-hurricanes.jpg" alt="" width="100" height="100">
+          <div><h3>Miami Hurricanes Athletics</h3><div class="job-role">Data Analytics Intern, Baseball · Athletic Tutor &amp; Mentor</div><p>Built automated pitch-classification and performance reporting, supported coaching decisions, and ranked 535 Division I hitters across approximately 52,000 strikeout pitches. Also tutored student-athletes in finance, mathematics, marketing, management, and Excel.</p></div>
         </article>
         <article class="job">
-          <div class="job-date">Apr 2021 , Jul 2025</div><img class="job-logo" src="assets/logo-rebel-sport.jpg" alt="" width="100" height="100">
-          <div><h3>Rebel Sport</h3><div class="job-role">Retail Sales Assistant · Seasonal</div><p>Delivered customer-focused product guidance, supported online-order fulfillment and replenishment, and consistently worked toward store sales targets in a high-volume retail environment.</p></div>
+          <div class="job-date">Apr 2021 - Jul 2025</div><img class="job-logo" src="assets/logo-rebel-sport.jpg" alt="" width="100" height="100">
+          <div><h3>Rebel Sport</h3><div class="job-role">Retail Sales Assistant · Seasonal</div><p>Advised customers, prepared online orders, and maintained floor availability through replenishment. Consistently met a store sales target of A$300 per hour.</p></div>
         </article>
         <article class="job">
-          <div class="job-date">Jun 2023 , Aug 2023</div><img class="job-logo" src="assets/logo-woolworths.jpg" alt="" width="100" height="100">
-          <div><h3>Woolworths Group</h3><div class="job-role">Supply Chain Project Intern · Sydney, Australia</div><p>Analyzed truckload and arrival-time data in Excel and Qlik, contributed to freight-forwarder discussions, and developed senior-leadership materials on global shipping sources.</p></div>
+          <div class="job-date">Jun 2023 - Aug 2023</div><img class="job-logo" src="assets/logo-woolworths.jpg" alt="" width="100" height="100">
+          <div><h3>Woolworths Group</h3><div class="job-role">Supply Chain Project Intern · Sydney, Australia</div><a class="company-ranking" href="https://fortune.com/company/woolworths/" target="_blank" rel="noreferrer">Fortune Global 500 · No. 345</a><p>Analyzed truckload and arrival-time data in Excel and Qlik, participated in freight-forwarder negotiations, and prepared senior-leadership materials on company demographics and global shipping sources.</p></div>
         </article>
         <article class="job">
-          <div class="job-date">Jun 2022 , Jul 2022</div><img class="job-logo" src="assets/logo-eml.jpg" alt="" width="100" height="100">
-          <div><h3>EML</h3><div class="job-role">Finance and People Team Intern · Sydney, Australia</div><p>Supported payroll processing, audit preparation, document workflows, and finance operations while working across onshore and offshore teams.</p></div>
+          <div class="job-date">Jun 2022 - Jul 2022</div><img class="job-logo" src="assets/logo-eml.jpg" alt="" width="100" height="100">
+          <div><h3>EML</h3><div class="job-role">Finance and People Team Intern · Sydney, Australia</div><p>Prepared documentation for offshore workers, processed payroll in Aurion, and supported finance audit preparation in Excel.</p></div>
         </article>
       </div>
     </section>
@@ -274,26 +280,28 @@
       </div>
       <div class="map-card">
         <div class="map-stage" aria-label="Interactive world map showing work, education, and capstone experience in the United States and Australia">
-          <img src="assets/world-map-cc0.svg" alt="World map" width="2000" height="1001">
-          <button class="map-point current active" style="left:26%;top:34%" data-location="cincinnati" aria-label="Cincinnati, Ohio, current work location"></button>
-          <button class="map-point mixed" style="left:27.5%;top:42%" data-location="miami" aria-label="Coral Gables and Miami, work, graduate education, and capstone location"></button>
-          <button class="map-point education" style="left:29%;top:31.5%" data-location="morgantown" aria-label="Morgantown, West Virginia, undergraduate education"></button>
-          <button class="map-point capstone" style="left:20.5%;top:33%" data-location="colorado" aria-label="Greenwood Village, Colorado, capstone partner location"></button>
-          <button class="map-point" style="left:89%;top:72%" data-location="sydney" aria-label="Sydney, Australia, work location"></button>
-          <div class="map-legend" aria-label="Map point legend"><span><i></i>Work</span><span><i class="education"></i>Education</span><span><i class="capstone"></i>Capstone</span></div>
+          <div class="map-visual">
+            <img src="assets/world-map-cc0.svg" alt="World map" width="2000" height="1001">
+            <button type="button" class="map-point current active" style="left:26%;top:34%" data-location="cincinnati" aria-label="Cincinnati, Ohio, current work location" aria-pressed="true"></button>
+            <button type="button" class="map-point point-mixed" style="left:27.5%;top:42%" data-location="miami" aria-label="Coral Gables and Miami, work, graduate education, and capstone location" aria-pressed="false"></button>
+            <button type="button" class="map-point point-education" style="left:28.4%;top:33%" data-location="morgantown" aria-label="Morgantown, West Virginia, undergraduate education" aria-pressed="false"></button>
+            <button type="button" class="map-point point-capstone" style="left:20.5%;top:33%" data-location="colorado" aria-label="Greenwood Village, Colorado, capstone partner location" aria-pressed="false"></button>
+            <button type="button" class="map-point" style="left:89%;top:72%" data-location="sydney" aria-label="Sydney, Australia, work location" aria-pressed="false"></button>
+          </div>
+          <div class="map-legend" aria-label="Map point legend"><span><i></i>Work</span><span><i class="legend-education"></i>Education</span><span><i class="legend-capstone"></i>Capstone</span></div>
         </div>
         <aside class="map-panel" aria-live="polite">
           <div class="section-kicker">Selected location</div>
           <h3 id="map-city">Cincinnati, Ohio</h3>
           <div class="map-status" id="map-status">Current · United States</div>
-          <p id="map-copy">Technology sourcing and category management in a large-scale enterprise environment.</p>
-          <div class="map-orgs" id="map-orgs"><div class="map-org"><img src="assets/logo-kroger.jpg" alt=""><strong>The Kroger Co.</strong></div></div>
+          <p id="map-copy">Technology sourcing across enterprise hardware, software, and IT services.</p>
+          <div class="map-orgs" id="map-orgs"><div class="map-org"><img src="assets/logo-kroger.jpg" alt=""><span class="map-org-copy"><strong>The Kroger Co.</strong><span>Technology sourcing · 2026 Fortune 500 #27</span></span></div></div>
           <div class="map-locations" aria-label="Choose a location">
-            <button class="map-location active" data-location="cincinnati">Cincinnati</button>
-            <button class="map-location" data-location="miami">Miami</button>
-            <button class="map-location" data-location="morgantown">Morgantown</button>
-            <button class="map-location" data-location="colorado">Colorado</button>
-            <button class="map-location" data-location="sydney">Sydney</button>
+            <button type="button" class="map-location active" data-location="cincinnati" aria-pressed="true">Cincinnati</button>
+            <button type="button" class="map-location" data-location="miami" aria-pressed="false">Miami</button>
+            <button type="button" class="map-location" data-location="morgantown" aria-pressed="false">Morgantown</button>
+            <button type="button" class="map-location" data-location="colorado" aria-pressed="false">Colorado</button>
+            <button type="button" class="map-location" data-location="sydney" aria-pressed="false">Sydney</button>
           </div>
           <div class="map-credit">Map base: <a href="https://commons.wikimedia.org/wiki/File:WorldMap-Blank-Noborders.svg" target="_blank" rel="noreferrer">Wikimedia Commons, CC0</a>.</div>
         </aside>
@@ -303,7 +311,7 @@
     <section class="section" aria-labelledby="engagements-heading">
       <div class="section-head">
         <div class="section-kicker">Graduate capstones</div>
-        <div><h2 class="section-title" id="engagements-heading">Real-world capstones with enterprise partners.</h2><p class="section-intro">The engagement context and Kristofor's contribution are public. Client records and original deliverables remain private.</p></div>
+        <div><h2 class="section-title" id="engagements-heading">Real-world capstones with enterprise partners.</h2><p class="section-intro">Applied analytics projects in IT asset risk and inventory planning, completed with City National Bank of Florida and Tractor Beverage Company.</p></div>
       </div>
       <div class="engagements">
         <a class="engagement" href="cnb-synthetic-dashboard.html" target="_blank" rel="noreferrer" aria-label="Open IT asset lifecycle and risk capstone case study">
@@ -312,7 +320,7 @@
         </a>
         <a class="engagement tractor" href="tractor-synthetic-inventory.html" target="_blank" rel="noreferrer" aria-label="Open synthetic Tractor inventory planning dashboard">
           <img class="engagement-logo" src="assets/logo-tractor-official.svg" alt="Tractor Beverage Company" loading="lazy">
-          <span class="engagement-copy"><span class="capstone-label">Real-world MSBA capstone</span><strong>Inventory planning and safety stock</strong><span>Led a seven-person team developing a reusable SKU-level inventory strategy using ABC segmentation, service-level targets, reorder logic, and simulation.</span></span>
+          <span class="engagement-copy"><span class="capstone-label">West Virginia University capstone</span><strong>Inventory planning and safety stock</strong><span>Led a seven-person team developing a reusable SKU-level inventory strategy using ABC segmentation, service-level targets, reorder logic, and simulation.</span></span>
         </a>
       </div>
     </section>
@@ -326,18 +334,18 @@
         <article class="project"><div class="project-meta"><span>Sports analytics</span><span>2026</span></div><h3>MLB Predictor</h3><div class="method-list"><span class="method-pill">Logistic regression</span><span class="method-pill">Elo</span><span class="method-pill">Poisson</span><span class="method-pill">Calibration</span></div><p>A live research dashboard combining baseball ratings, scoring distributions, calibrated probabilities, market-implied odds, Kelly sizing, and downloadable paper-trading records.</p><div class="project-credit">Independent project. Research and paper trading only.</div><div class="project-links"><a href="https://krisfigueiredo-ui.github.io/MLB-Predictor/" target="_blank" rel="noreferrer">Live app</a><a href="projects.html#mlb">Methods</a><a href="https://github.com/krisfigueiredo-ui/MLB-Predictor" target="_blank" rel="noreferrer">Repository</a></div></article>
         <article class="project"><div class="project-meta"><span>Systematic research</span><span>2026</span></div><h3>Quant Desk</h3><div class="method-list"><span class="method-pill">Factor models</span><span class="method-pill">Walk-forward</span><span class="method-pill">Bootstrap</span><span class="method-pill">ML</span></div><p>A paper-trading workspace for cross-sectional signals, risk-aware allocation, purged validation, read-only account monitoring, and dry-run operations.</p><div class="project-credit">Independent project. No live-money execution path.</div><div class="project-links"><a href="https://krisfigueiredo-ui.github.io/Quant-Desk/" target="_blank" rel="noreferrer">Live app</a><a href="projects.html#quant">Methods</a><a href="https://github.com/krisfigueiredo-ui/Quant-Desk" target="_blank" rel="noreferrer">Repository</a></div></article>
         <article class="project"><div class="project-meta"><span>RAG &amp; talent analytics</span><span>2026</span></div><h3>HireSense</h3><div class="method-list"><span class="method-pill">RAG</span><span class="method-pill">Embeddings</span><span class="method-pill">Cosine similarity</span><span class="method-pill">LLM</span></div><p>A candidate-analysis prototype combining document retrieval, similarity scoring, explainable rankings, and structured interview prompts.</p><div class="project-credit">Team: Waleed El-Jack, Kristofor Figueiredo, Kevin Ordet, and Jamie Shook.</div><div class="project-links"><a href="https://krisfigueiredo-ui.github.io/Hiresense-AI-umiami-/" target="_blank" rel="noreferrer">Live app</a><a href="projects.html#hiresense">Methods</a><a href="https://github.com/krisfigueiredo-ui/Hiresense-AI-umiami-" target="_blank" rel="noreferrer">Repository</a></div></article>
-        <article class="project"><div class="project-meta"><span>Real-world capstone</span><span>2025</span></div><h3>Tractor Inventory Planning</h3><div class="method-list"><span class="method-pill">ABC analysis</span><span class="method-pill">Safety stock</span><span class="method-pill">Forecasting</span><span class="method-pill">Simulation</span></div><p>Led a seven-person team developing a reusable SKU-level safety-stock strategy for a 27-product portfolio. The public companion uses fictional records to demonstrate the analytical approach.</p><div class="project-credit">Client-sponsored MSBA capstone. Client data and original deliverables remain private.</div><div class="project-links"><a href="tractor-synthetic-inventory.html" target="_blank" rel="noreferrer">Public demo</a><a href="projects.html#tractor">Methods</a><a href="https://github.com/krisfigueiredo-ui/enterprise-analytics-capstones" target="_blank" rel="noreferrer">Repository</a></div></article>
+        <article class="project"><div class="project-meta"><span>Real-world capstone</span><span>2025</span></div><h3>Tractor Inventory Planning</h3><div class="method-list"><span class="method-pill">ABC analysis</span><span class="method-pill">Safety stock</span><span class="method-pill">Forecasting</span><span class="method-pill">Simulation</span></div><p>Led a seven-person team developing a SKU-level safety-stock strategy for a 27-product portfolio. Backtesting indicated approximately 80% of prior stockouts on key items could have been prevented while improving return on inventory investment by more than 20%.</p><div class="project-credit">West Virginia University capstone · Project Team Leader</div><div class="project-links"><a href="tractor-synthetic-inventory.html" target="_blank" rel="noreferrer">Dashboard</a><a href="projects.html#tractor">Methods</a><a href="https://github.com/krisfigueiredo-ui/enterprise-analytics-capstones" target="_blank" rel="noreferrer">Repository</a></div></article>
         <article class="project"><div class="project-meta"><span>Database architecture</span><span>WVU</span></div><h3>Surfside Surfboards</h3><div class="method-list"><span class="method-pill">MySQL</span><span class="method-pill">3NF</span><span class="method-pill">Views</span><span class="method-pill">Constraints</span></div><p>A normalized operating model for customers, board configurations, reusable components, orders, reviews, historical price snapshots, and quarterly reporting.</p><div class="project-credit">Original concept and business rules by Kristofor Figueiredo; SQL implementation reconstructed from the surviving brief.</div><div class="project-links"><a href="https://krisfigueiredo-ui.github.io/surfside-surfboards-database/" target="_blank" rel="noreferrer">Schema reference</a><a href="projects.html#surfside">Methods</a><a href="https://github.com/krisfigueiredo-ui/surfside-surfboards-database" target="_blank" rel="noreferrer">Repository</a></div></article>
         <article class="project"><div class="project-meta"><span>Big data &amp; operations</span><span>UMiami</span></div><h3>Coffee Operations Modeling</h3><div class="method-list"><span class="method-pill">PySpark</span><span class="method-pill">Decision trees</span><span class="method-pill">Logistic regression</span><span class="method-pill">AUC</span></div><p>Modeled wait time and rewards membership across approximately 1.96 million transaction records, comparing interpretable and nonlinear approaches.</p><div class="project-credit">Team: Jamie Shook, Kristofor Figueiredo, and Kevin Ordet. The missing source dataset is disclosed in the repository.</div><div class="project-links"><a href="projects.html#coffee">Case study</a><a href="https://github.com/krisfigueiredo-ui/coffee-operations-pyspark" target="_blank" rel="noreferrer">Repository</a></div></article>
         <article class="project"><div class="project-meta"><span>Time series</span><span>UMiami</span></div><h3>Retail Job Openings Forecast</h3><div class="method-list"><span class="method-pill">SARIMA</span><span class="method-pill">ETS</span><span class="method-pill">STL</span><span class="method-pill">Rolling CV</span></div><p>A 12-month U.S. retail job-openings forecast comparing seasonal statistical models and a weighted ensemble under rolling-origin validation.</p><div class="project-credit">Team 67: Kristofor Figueiredo, Jamie Shook, Jorge Palau, and Gabriella Lerario.</div><div class="project-links"><a href="projects.html#retail-forecast">Case study</a><a href="https://github.com/krisfigueiredo-ui/retail-job-openings-forecast" target="_blank" rel="noreferrer">Repository</a></div></article>
         <article class="project"><div class="project-meta"><span>Classification</span><span>UMiami</span></div><h3>Internet Service Churn</h3><div class="method-list"><span class="method-pill">Gradient boosting</span><span class="method-pill">Feature engineering</span><span class="method-pill">ROC-AUC</span><span class="method-pill">Thresholds</span></div><p>A team-built churn classification workflow with imputation, encoding, stratified validation, feature importance, ROC analysis, and operating-threshold sensitivity.</p><div class="project-credit">Team: Kristofor Figueiredo, Jamie Shook, Jorge Palau-Blanco, and Andrew Cohen.</div><div class="project-links"><a href="projects.html#churn">Case study</a><a href="assets/customer-churn-poster.png" target="_blank" rel="noreferrer">Final poster</a><a href="https://github.com/krisfigueiredo-ui/internet-service-churn-model" target="_blank" rel="noreferrer">Repository</a></div></article>
-        <article class="project"><div class="project-meta"><span>Real-world capstone</span><span>2026</span></div><h3>IT Asset Lifecycle &amp; Risk</h3><div class="method-list"><span class="method-pill">ServiceNow</span><span class="method-pill">Power BI</span><span class="method-pill">19 DAX measures</span><span class="method-pill">KPI audit</span></div><p>Contributed to a KPI audit across approximately 4,200 IT hardware assets, modeled lifecycle and end-of-life risk, surfaced legacy dependencies, and helped standardize executive reporting.</p><div class="project-credit">City National Bank of Florida MSBA capstone. Public demo values and DAX examples are fictional; original data and deliverables remain private.</div><div class="project-links"><a href="cnb-synthetic-dashboard.html" target="_blank" rel="noreferrer">Public demo</a><a href="projects.html#banking">Methods</a><a href="https://github.com/krisfigueiredo-ui/enterprise-analytics-capstones" target="_blank" rel="noreferrer">Repository</a></div></article>
+        <article class="project"><div class="project-meta"><span>Real-world capstone</span><span>2026</span></div><h3>IT Asset Lifecycle &amp; Risk</h3><div class="method-list"><span class="method-pill">ServiceNow</span><span class="method-pill">Power BI</span><span class="method-pill">19 DAX measures</span><span class="method-pill">KPI audit</span></div><p>Contributed to a KPI audit across approximately 4,200 IT hardware assets, modeled lifecycle and end-of-life risk, surfaced legacy dependencies, and helped standardize executive reporting across four Power BI pages.</p><div class="project-credit">University of Miami capstone · City National Bank of Florida</div><div class="project-links"><a href="cnb-synthetic-dashboard.html" target="_blank" rel="noreferrer">Case study</a><a href="projects.html#banking">Methods</a><a href="https://github.com/krisfigueiredo-ui/enterprise-analytics-capstones" target="_blank" rel="noreferrer">Repository</a></div></article>
       </div>
-      <a class="case-study-link" href="projects.html">Explore every method, model decision, validation step, limitation, and team credit →</a>
+      <a class="case-study-link" href="projects.html">View detailed project methods</a>
     </section>
 
     <section class="section" aria-labelledby="skills-heading">
-      <div class="section-head"><div class="section-kicker">Capabilities</div><h2 class="section-title" id="skills-heading">Tools chosen for the decision at hand.</h2></div>
+      <div class="section-head"><div class="section-kicker">Capabilities</div><h2 class="section-title" id="skills-heading">Technical toolkit.</h2></div>
       <div class="skill-grid">
         <div class="skill"><h3>Analytics &amp; BI</h3><div class="tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Qlik</span><span class="tag">Excel</span><span class="tag">SQL</span></div></div>
         <div class="skill"><h3>Programming &amp; modeling</h3><div class="tags"><span class="tag">Python</span><span class="tag">pandas</span><span class="tag">NumPy</span><span class="tag">scikit-learn</span><span class="tag">R</span></div></div>
@@ -347,7 +355,7 @@
     </section>
 
     <section class="section" id="education" aria-labelledby="education-heading">
-      <div class="section-head"><div class="section-kicker">Education</div><h2 class="section-title" id="education-heading">Business foundation, analytical specialization.</h2></div>
+      <div class="section-head"><div class="section-kicker">Education</div><h2 class="section-title" id="education-heading">Business analytics and supply chain.</h2></div>
       <div class="education">
         <article class="school"><h3>University of Miami Herbert Business School</h3><div class="degree">M.S. in Business Analytics</div><div class="school-meta">May 2026 · GPA 3.9 / 4.0 · Award of Academic Merit</div></article>
         <article class="school"><h3>West Virginia University</h3><div class="degree">B.S.B.A., Supply Chain Management · Finance minor</div><div class="school-meta">May 2025 · President's List · Dean's List</div></article>
@@ -360,45 +368,45 @@
     </section>
   </main>
 
-  <footer class="shell"><span>Kristofor Figueiredo · Cincinnati, Ohio</span><span>Accessible, privacy-conscious, and built without tracking.</span></footer>
+  <footer class="shell"><span>Kristofor Figueiredo · Cincinnati, Ohio</span><span><a href="https://github.com/krisfigueiredo-ui" target="_blank" rel="noreferrer">GitHub</a> · <a href="https://www.linkedin.com/in/kristofor-f/" target="_blank" rel="noreferrer">LinkedIn</a> · <a href="assets/Kristofor_Figueiredo_Resume.pdf" download>Résumé</a></span></footer>
   <script>
     const workLocations = {
       cincinnati: {
         city: "Cincinnati, Ohio",
         status: "Current · United States",
-        copy: "Technology sourcing and category management in a large-scale enterprise environment.",
-        orgs: [{ name: "The Kroger Co.", logo: "assets/logo-kroger.jpg" }]
+        copy: "Technology sourcing across enterprise hardware, software, and IT services, with spend analysis, supplier scorecards, and stakeholder support for negotiations and total cost of ownership.",
+        orgs: [{ name: "The Kroger Co.", logo: "assets/logo-kroger.jpg", detail: "Sourcing Category Management Analyst - Technology", rank: "2026 Fortune 500 · No. 27", rankUrl: "https://fortune.com/ranking/fortune500/2026/" }]
       },
       miami: {
         city: "Miami & Coral Gables, Florida",
         status: "Graduate education · work · capstone",
-        copy: "M.S. in Business Analytics, collegiate athletics analysis, and a real-world IT asset risk capstone.",
+        copy: "Graduate study in business analytics, baseball performance analysis, athletic tutoring, and an IT asset lifecycle capstone.",
         orgs: [
-          { name: "University of Miami", logo: "assets/logo-miami-hurricanes.jpg" },
-          { name: "Miami Hurricanes Athletics", logo: "assets/logo-miami-hurricanes.jpg" },
-          { name: "City National Bank of Florida", logo: "assets/logo-cnb.svg" }
+          { name: "University of Miami", logo: "assets/logo-miami-hurricanes.jpg", detail: "M.S. Business Analytics · 3.9 GPA" },
+          { name: "Miami Hurricanes Athletics", logo: "assets/logo-miami-hurricanes.jpg", detail: "Baseball analytics · Athletic tutoring" },
+          { name: "City National Bank of Florida", logo: "assets/logo-cnb.svg", detail: "IT asset risk capstone · Approximately 4,200 assets" }
         ]
       },
       morgantown: {
         city: "Morgantown, West Virginia",
         status: "Undergraduate education · United States",
-        copy: "B.S.B.A. in Supply Chain Management with a Finance minor at West Virginia University.",
-        orgs: [{ name: "West Virginia University", mark: "WVU" }]
+        copy: "Completed a B.S.B.A. in Supply Chain Management with a Finance minor, including President's List and Dean's List recognition.",
+        orgs: [{ name: "West Virginia University", mark: "WVU", detail: "B.S.B.A. Supply Chain Management · Finance minor" }]
       },
       colorado: {
         city: "Greenwood Village, Colorado",
         status: "Real-world capstone partner · United States",
-        copy: "Inventory planning and safety-stock strategy developed through a seven-person MSBA capstone team.",
-        orgs: [{ name: "Tractor Beverage Company", logo: "assets/logo-tractor-official.svg", onDark: true }]
+        copy: "Led a seven-person capstone team that developed a SKU-level safety-stock strategy across a 27-product portfolio using ABC analysis, service levels, bootstrap resampling, and Monte Carlo simulation.",
+        orgs: [{ name: "Tractor Beverage Company", logo: "assets/logo-tractor-official.svg", onDark: true, detail: "Safety Stock Optimization · Project Team Leader" }]
       },
       sydney: {
         city: "Sydney, Australia",
         status: "2021-2025 · Australia",
-        copy: "Retail operations, global supply-chain analysis, and finance experience across three organizations.",
+        copy: "Professional experience in retail sales, supply-chain analysis, freight-forwarder negotiations, payroll, and finance operations.",
         orgs: [
-          { name: "Rebel Sport", logo: "assets/logo-rebel-sport.jpg" },
-          { name: "Woolworths Group", logo: "assets/logo-woolworths.jpg" },
-          { name: "EML", logo: "assets/logo-eml.jpg" }
+          { name: "Rebel Sport", logo: "assets/logo-rebel-sport.jpg", detail: "Retail Sales Assistant" },
+          { name: "Woolworths Group", logo: "assets/logo-woolworths.jpg", detail: "Supply Chain Project Intern", rank: "Fortune Global 500 · No. 345", rankUrl: "https://fortune.com/company/woolworths/" },
+          { name: "EML", logo: "assets/logo-eml.jpg", detail: "Finance and People Team Intern" }
         ]
       }
     };
@@ -421,17 +429,36 @@
           image.className = "map-mark";
           image.textContent = org.mark;
         }
+        const copy = document.createElement("span");
+        copy.className = "map-org-copy";
         const name = document.createElement("strong");
         name.textContent = org.name;
-        row.append(image, name);
+        copy.append(name);
+        if (org.detail) {
+          const detail = document.createElement("span");
+          detail.textContent = org.detail;
+          copy.append(detail);
+        }
+        if (org.rank) {
+          const rank = document.createElement(org.rankUrl ? "a" : "span");
+          rank.textContent = org.rank;
+          if (org.rankUrl) {
+            rank.href = org.rankUrl;
+            rank.target = "_blank";
+            rank.rel = "noreferrer";
+          }
+          copy.append(rank);
+        }
+        row.append(image, copy);
         return row;
       }));
       document.querySelectorAll("[data-location]").forEach((button) => {
         button.classList.toggle("active", button.dataset.location === key);
-        if (button.classList.contains("map-point")) button.setAttribute("aria-pressed", button.dataset.location === key ? "true" : "false");
+        button.setAttribute("aria-pressed", button.dataset.location === key ? "true" : "false");
       });
     };
     document.querySelectorAll("[data-location]").forEach((button) => button.addEventListener("click", () => setLocation(button.dataset.location)));
+    setLocation("cincinnati");
   </script>
 </body>
 </html>

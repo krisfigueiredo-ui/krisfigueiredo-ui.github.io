@@ -18,7 +18,7 @@ Open `http://127.0.0.1:8000/`.
 
 The site is based on the owner-provided résumé and verified public LinkedIn experience. It intentionally excludes confidential client work, unpublished source data, private contact details, proprietary deliverables, and the University of Miami baseball dashboard. Team projects name the classmates credited in the source project materials.
 
-The IT asset-risk and inventory-planning pages are public companions to real-world MSBA capstones. Their sample records, public metrics, and DAX examples are newly created for the portfolio and do not reproduce client systems, data, reports, thresholds, or NDA-covered deliverables.
+The IT asset-risk page accompanies a University of Miami M.S. in Business Analytics capstone. The inventory-planning page accompanies a West Virginia University B.S.B.A. Supply Chain Management capstone. Their demonstration records, public metrics, and DAX examples were created for the portfolio and do not reproduce client systems, source data, or proprietary deliverables.
 
 ## Portfolio structure
 
