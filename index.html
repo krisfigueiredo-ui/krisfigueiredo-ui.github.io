@@ -90,13 +90,16 @@
     .job-role{font-size:12px;font-weight:610;color:var(--accent);margin-bottom:11px}
     .job p{font-size:13px;color:#4e5c57;margin:0;max-width:720px}
     .engagements{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-left:260px}
-    .engagement{min-height:176px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;display:flex;align-items:center;justify-content:space-between;gap:24px;text-decoration:none}
-    .engagement-logo{width:min(190px,43%);height:68px;object-fit:contain;object-position:left center}
-    .engagement-copy{max-width:285px}
+    .engagement{min-height:218px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;display:flex;align-items:center;justify-content:space-between;gap:26px;text-decoration:none}
+    .engagement-logo{width:min(180px,40%);height:74px;object-fit:contain;object-position:left center}
+    .engagement-copy{max-width:310px}
     .engagement-copy strong{display:block;font-size:13px;margin-bottom:6px}
     .engagement-copy span{display:block;font-size:11px;color:var(--muted);line-height:1.55}
     .engagement.tractor{background:#182620;border-color:#182620;color:#fff}
     .engagement.tractor .engagement-copy span{color:#c0cbc6}
+    .engagement.tractor .engagement-logo{height:54px;width:min(220px,42%)}
+    .capstone-label{display:inline-block;font-family:var(--mono);font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+    .engagement.tractor .capstone-label{color:#94c9b7}
     .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     .project{min-height:320px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;display:flex;flex-direction:column;transition:transform .18s,border-color .18s}
     .project:hover{transform:translateY(-2px);border-color:#aeb6af}
@@ -108,10 +111,13 @@
     .project-links a{font-size:11px;font-weight:680;color:var(--accent);text-decoration:none}
     .method-list{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0 18px}
     .method-pill{font-size:9px;font-weight:650;color:#315249;background:#e6efeb;border:1px solid #cfdfd9;border-radius:999px;padding:4px 7px;line-height:1}
-    .map-card{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(260px,.65fr);overflow:hidden;border:1px solid #233a34;border-radius:14px;background:#10241f;color:#eef6f2;box-shadow:0 16px 40px rgba(16,36,31,.12)}
-    .map-stage{position:relative;min-height:430px;padding:34px;background:radial-gradient(circle at 65% 45%,rgba(65,126,106,.16),transparent 36%),#10241f}
-    .map-stage img{width:100%;height:100%;min-height:360px;object-fit:contain;opacity:.68;filter:invert(93%) sepia(8%) saturate(172%) hue-rotate(105deg) brightness(100%) contrast(90%)}
-    .map-point{position:absolute;width:18px;height:18px;padding:0;border:3px solid #10241f;border-radius:50%;background:#8ad4b9;box-shadow:0 0 0 1px rgba(197,240,224,.65);cursor:pointer;transform:translate(-50%,-50%);transition:transform .16s,background .16s}
+    .map-card{display:grid;grid-template-columns:minmax(0,1.85fr) minmax(285px,.65fr);overflow:hidden;border:1px solid #233a34;border-radius:14px;background:#10241f;color:#eef6f2;box-shadow:0 16px 40px rgba(16,36,31,.12)}
+    .map-stage{position:relative;min-height:560px;padding:28px;background:radial-gradient(circle at 62% 42%,rgba(65,126,106,.18),transparent 38%),#10241f}
+    .map-stage img{width:100%;height:100%;min-height:500px;object-fit:contain;opacity:.72;filter:invert(93%) sepia(8%) saturate(172%) hue-rotate(105deg) brightness(100%) contrast(90%)}
+    .map-point{position:absolute;width:16px;height:16px;padding:0;border:3px solid #10241f;border-radius:50%;background:#8ad4b9;box-shadow:0 0 0 1px rgba(197,240,224,.65);cursor:pointer;transform:translate(-50%,-50%);transition:transform .16s,background .16s}
+    .map-point.education{background:#f2c35b;box-shadow:0 0 0 1px rgba(255,222,146,.72)}
+    .map-point.capstone{background:#78b9dc;box-shadow:0 0 0 1px rgba(176,220,244,.72)}
+    .map-point.mixed{background:conic-gradient(#8ad4b9 0 33%,#f2c35b 33% 66%,#78b9dc 66% 100%)}
     .map-point:hover,.map-point.active{transform:translate(-50%,-50%) scale(1.28);background:#fff}
     .map-point.current::after{content:"Current";position:absolute;left:20px;top:-8px;font-family:var(--mono);font-size:8px;letter-spacing:.08em;text-transform:uppercase;color:#d8eee6;background:#173d33;border:1px solid #376457;border-radius:5px;padding:4px 6px;white-space:nowrap}
     .map-panel{padding:34px 30px;border-left:1px solid #29423b;background:#142a24;display:flex;flex-direction:column}
@@ -122,6 +128,11 @@
     .map-orgs{display:grid;gap:9px;margin-top:auto}
     .map-org{display:flex;align-items:center;gap:10px;font-size:11px;color:#edf6f2}
     .map-org img{width:32px;height:32px;object-fit:contain;border-radius:7px;background:#fff;border:1px solid #436058}
+    .map-org img.on-dark{background:#173d33;padding:5px}
+    .map-mark{width:32px;height:32px;border-radius:7px;background:#002855;color:#eaaa00;display:grid;place-items:center;font:800 10px var(--sans);border:1px solid #436058}
+    .map-legend{position:absolute;left:24px;bottom:20px;display:flex;flex-wrap:wrap;gap:12px;background:rgba(12,34,28,.86);border:1px solid #35544a;border-radius:8px;padding:8px 10px}
+    .map-legend span{display:flex;align-items:center;gap:6px;font-size:8px;color:#c3d9d1;text-transform:uppercase;letter-spacing:.06em}
+    .map-legend i{width:8px;height:8px;border-radius:50%;background:#8ad4b9}.map-legend i.education{background:#f2c35b}.map-legend i.capstone{background:#78b9dc}
     .map-locations{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
     .map-location{border:1px solid #3b5a50;background:transparent;color:#c9ddd5;border-radius:7px;padding:7px 9px;font:600 9px var(--sans);cursor:pointer}
     .map-location.active{background:#e9f4ef;color:#17372f;border-color:#e9f4ef}
@@ -147,12 +158,12 @@
     footer{padding:0 0 34px;display:flex;justify-content:space-between;gap:20px;font-family:var(--mono);font-size:9px;color:var(--muted)}
     @media(max-width:980px){
       .hero{grid-template-columns:minmax(0,1fr) 300px;gap:52px}.logo-rail{grid-template-columns:repeat(3,1fr)}
-      .timeline,.engagements,.skill-grid,.education{margin-left:0}.projects{grid-template-columns:1fr 1fr}.map-card{grid-template-columns:1fr}.map-panel{border-left:0;border-top:1px solid #29423b}.map-stage{min-height:380px}
+      .timeline,.engagements,.skill-grid,.education{margin-left:0}.projects{grid-template-columns:1fr 1fr}.map-card{grid-template-columns:1fr}.map-panel{border-left:0;border-top:1px solid #29423b}.map-stage{min-height:470px}.map-stage img{min-height:420px}
     }
     @media(max-width:760px){
       .hero{grid-template-columns:1fr;gap:38px;padding-top:54px}.portrait-card{max-width:380px}.section-head{grid-template-columns:1fr;gap:10px}
       .facts{grid-template-columns:1fr 1fr}.fact:nth-child(2){border-right:0}.fact:nth-child(-n+2){border-bottom:1px solid var(--line)}
-      .engagements{grid-template-columns:1fr}.job{grid-template-columns:118px 50px 1fr;gap:18px}.map-stage{min-height:330px;padding:18px}.map-stage img{min-height:290px}
+      .engagements{grid-template-columns:1fr}.job{grid-template-columns:118px 50px 1fr;gap:18px}.map-stage{min-height:390px;padding:16px}.map-stage img{min-height:350px}
     }
     @media(max-width:600px){
       .shell{width:min(100% - 30px,1180px)}.nav-links a:not(.nav-cta){display:none}.hero{min-height:0;padding:46px 0 48px}h1{font-size:clamp(46px,15vw,64px)}
@@ -187,7 +198,7 @@
       <div>
         <div class="eyebrow">Business analytics · technology sourcing · supply chain</div>
         <h1 id="hero-heading">Kristofor Figueiredo</h1>
-        <p class="hero-lede">I turn complex commercial and operational data into practical decisions—across sourcing, supply chain, performance analytics, and applied machine learning.</p>
+        <p class="hero-lede">I turn complex commercial and operational data into practical decisions,across sourcing, supply chain, performance analytics, and applied machine learning.</p>
         <div class="hero-actions">
           <a class="button primary" href="assets/Kristofor_Figueiredo_Resume.pdf" download aria-label="Download Kristofor Figueiredo's resume as a PDF">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 20h14"/></svg>
@@ -201,7 +212,7 @@
         <div class="portrait-frame"><img src="assets/kristofor-figueiredo.jpg" alt="Kristofor Figueiredo" width="800" height="800"></div>
         <div class="role-card">
           <div class="current">Current role</div>
-          <strong>Sourcing Category Management Analyst — Technology</strong>
+          <strong>Sourcing Category Management Analyst , Technology</strong>
           <span>The Kroger Co. · Cincinnati, Ohio</span>
         </div>
       </aside>
@@ -210,7 +221,7 @@
     <section class="section" aria-labelledby="profile-heading">
       <div class="section-head">
         <div class="section-kicker">Profile</div>
-        <div><h2 class="section-title" id="profile-heading">Commercial judgment, backed by analytical depth.</h2><p class="section-intro">Experience across enterprise sourcing, athletic performance, retail operations, and global supply chain—verified against my public LinkedIn profile and résumé.</p></div>
+        <div><h2 class="section-title" id="profile-heading">Commercial judgment, backed by analytical depth.</h2><p class="section-intro">Experience across enterprise sourcing, athletic performance, retail operations, and global supply chain,verified against my public LinkedIn profile and résumé.</p></div>
       </div>
       <div class="facts">
         <div class="fact"><strong>3.9 / 4.0</strong><span>University of Miami MSBA GPA</span></div>
@@ -234,23 +245,23 @@
       </div>
       <div class="timeline">
         <article class="job">
-          <div class="job-date">Jun 2026 — Present</div><img class="job-logo" src="assets/logo-kroger.jpg" alt="" width="100" height="100">
-          <div><h3>The Kroger Co.</h3><div class="job-role">Sourcing Category Management Analyst — Technology</div><p>Supports technology sourcing and category management through spend analysis, supplier evaluation, stakeholder coordination, and commercially grounded decision support.</p></div>
+          <div class="job-date">Jun 2026 , Present</div><img class="job-logo" src="assets/logo-kroger.jpg" alt="" width="100" height="100">
+          <div><h3>The Kroger Co.</h3><div class="job-role">Sourcing Category Management Analyst , Technology</div><p>Supports technology sourcing and category management through spend analysis, supplier evaluation, stakeholder coordination, and commercially grounded decision support.</p></div>
         </article>
         <article class="job">
-          <div class="job-date">Sep 2025 — May 2026</div><img class="job-logo" src="assets/logo-miami-hurricanes.jpg" alt="" width="100" height="100">
+          <div class="job-date">Sep 2025 , May 2026</div><img class="job-logo" src="assets/logo-miami-hurricanes.jpg" alt="" width="100" height="100">
           <div><h3>Miami Hurricanes Athletics</h3><div class="job-role">Data Analytics Intern, Baseball · Athletic Tutor &amp; Mentor</div><p>Translated performance data into coaching-ready insights and supported student-athletes in quantitative and business coursework. Public résumé-level summary only; internal dashboards, source data, and proprietary deliverables are not published.</p></div>
         </article>
         <article class="job">
-          <div class="job-date">Apr 2021 — Jul 2025</div><img class="job-logo" src="assets/logo-rebel-sport.jpg" alt="" width="100" height="100">
+          <div class="job-date">Apr 2021 , Jul 2025</div><img class="job-logo" src="assets/logo-rebel-sport.jpg" alt="" width="100" height="100">
           <div><h3>Rebel Sport</h3><div class="job-role">Retail Sales Assistant · Seasonal</div><p>Delivered customer-focused product guidance, supported online-order fulfillment and replenishment, and consistently worked toward store sales targets in a high-volume retail environment.</p></div>
         </article>
         <article class="job">
-          <div class="job-date">Jun 2023 — Aug 2023</div><img class="job-logo" src="assets/logo-woolworths.jpg" alt="" width="100" height="100">
+          <div class="job-date">Jun 2023 , Aug 2023</div><img class="job-logo" src="assets/logo-woolworths.jpg" alt="" width="100" height="100">
           <div><h3>Woolworths Group</h3><div class="job-role">Supply Chain Project Intern · Sydney, Australia</div><p>Analyzed truckload and arrival-time data in Excel and Qlik, contributed to freight-forwarder discussions, and developed senior-leadership materials on global shipping sources.</p></div>
         </article>
         <article class="job">
-          <div class="job-date">Jun 2022 — Jul 2022</div><img class="job-logo" src="assets/logo-eml.jpg" alt="" width="100" height="100">
+          <div class="job-date">Jun 2022 , Jul 2022</div><img class="job-logo" src="assets/logo-eml.jpg" alt="" width="100" height="100">
           <div><h3>EML</h3><div class="job-role">Finance and People Team Intern · Sydney, Australia</div><p>Supported payroll processing, audit preparation, document workflows, and finance operations while working across onshore and offshore teams.</p></div>
         </article>
       </div>
@@ -259,14 +270,17 @@
     <section class="section" id="locations" aria-labelledby="locations-heading">
       <div class="section-head">
         <div class="section-kicker">Global experience</div>
-        <div><h2 class="section-title" id="locations-heading">Work shaped across two countries.</h2><p class="section-intro">Select a location to see the organizations and roles connected to each market. Cincinnati is my current base.</p></div>
+        <div><h2 class="section-title" id="locations-heading">Work, education, and capstones across two countries.</h2><p class="section-intro">Explore the locations that shaped my professional experience and academic work. Cincinnati is my current base.</p></div>
       </div>
       <div class="map-card">
-        <div class="map-stage" aria-label="Interactive world map showing work experience in Cincinnati, Miami, and Sydney">
+        <div class="map-stage" aria-label="Interactive world map showing work, education, and capstone experience in the United States and Australia">
           <img src="assets/world-map-cc0.svg" alt="World map" width="2000" height="1001">
-          <button class="map-point current active" style="left:27%;top:34%" data-location="cincinnati" aria-label="Cincinnati, Ohio — current location"></button>
-          <button class="map-point" style="left:26.5%;top:43%" data-location="miami" aria-label="Coral Gables and Miami, Florida"></button>
-          <button class="map-point" style="left:89%;top:73%" data-location="sydney" aria-label="Sydney, Australia"></button>
+          <button class="map-point current active" style="left:26%;top:34%" data-location="cincinnati" aria-label="Cincinnati, Ohio, current work location"></button>
+          <button class="map-point mixed" style="left:27.5%;top:42%" data-location="miami" aria-label="Coral Gables and Miami, work, graduate education, and capstone location"></button>
+          <button class="map-point education" style="left:29%;top:31.5%" data-location="morgantown" aria-label="Morgantown, West Virginia, undergraduate education"></button>
+          <button class="map-point capstone" style="left:20.5%;top:33%" data-location="colorado" aria-label="Greenwood Village, Colorado, capstone partner location"></button>
+          <button class="map-point" style="left:89%;top:72%" data-location="sydney" aria-label="Sydney, Australia, work location"></button>
+          <div class="map-legend" aria-label="Map point legend"><span><i></i>Work</span><span><i class="education"></i>Education</span><span><i class="capstone"></i>Capstone</span></div>
         </div>
         <aside class="map-panel" aria-live="polite">
           <div class="section-kicker">Selected location</div>
@@ -277,6 +291,8 @@
           <div class="map-locations" aria-label="Choose a location">
             <button class="map-location active" data-location="cincinnati">Cincinnati</button>
             <button class="map-location" data-location="miami">Miami</button>
+            <button class="map-location" data-location="morgantown">Morgantown</button>
+            <button class="map-location" data-location="colorado">Colorado</button>
             <button class="map-location" data-location="sydney">Sydney</button>
           </div>
           <div class="map-credit">Map base: <a href="https://commons.wikimedia.org/wiki/File:WorldMap-Blank-Noborders.svg" target="_blank" rel="noreferrer">Wikimedia Commons, CC0</a>.</div>
@@ -286,17 +302,17 @@
 
     <section class="section" aria-labelledby="engagements-heading">
       <div class="section-head">
-        <div class="section-kicker">Industry work</div>
-        <div><h2 class="section-title" id="engagements-heading">Real client engagements, handled responsibly.</h2><p class="section-intro">Public context is intentionally limited where client confidentiality applies.</p></div>
+        <div class="section-kicker">Graduate capstones</div>
+        <div><h2 class="section-title" id="engagements-heading">Real-world capstones with enterprise partners.</h2><p class="section-intro">The engagement context and Kristofor's contribution are public. Client records and original deliverables remain private.</p></div>
       </div>
       <div class="engagements">
-        <a class="engagement" href="cnb-synthetic-dashboard.html" target="_blank" rel="noreferrer" aria-label="Open synthetic banking analytics and DAX dashboard">
+        <a class="engagement" href="cnb-synthetic-dashboard.html" target="_blank" rel="noreferrer" aria-label="Open IT asset lifecycle and risk capstone case study">
           <img class="engagement-logo" src="assets/logo-cnb.svg" alt="City National Bank of Florida" loading="lazy">
-          <span class="engagement-copy"><strong>View synthetic banking analytics demo</strong><span>Fictional metrics and sample DAX measures only. No client data, systems, or NDA-covered deliverables are reproduced.</span></span>
+          <span class="engagement-copy"><span class="capstone-label">Real-world MSBA capstone</span><strong>IT asset lifecycle and risk</strong><span>Contributed to a cross-functional KPI audit across approximately 4,200 hardware assets, ServiceNow lifecycle modeling, and four Power BI pages powered by 19 custom DAX measures.</span></span>
         </a>
         <a class="engagement tractor" href="tractor-synthetic-inventory.html" target="_blank" rel="noreferrer" aria-label="Open synthetic Tractor inventory planning dashboard">
-          <img class="engagement-logo" src="assets/logo-tractor.png" alt="Tractor Beverage Company" loading="lazy">
-          <span class="engagement-copy"><strong>View synthetic inventory planning demo</strong><span>Fictional SKU records demonstrate ABC, safety stock, reorder-point, forecast, and simulation concepts. No client data is used.</span></span>
+          <img class="engagement-logo" src="assets/logo-tractor-official.svg" alt="Tractor Beverage Company" loading="lazy">
+          <span class="engagement-copy"><span class="capstone-label">Real-world MSBA capstone</span><strong>Inventory planning and safety stock</strong><span>Led a seven-person team developing a reusable SKU-level inventory strategy using ABC segmentation, service-level targets, reorder logic, and simulation.</span></span>
         </a>
       </div>
     </section>
@@ -310,12 +326,12 @@
         <article class="project"><div class="project-meta"><span>Sports analytics</span><span>2026</span></div><h3>MLB Predictor</h3><div class="method-list"><span class="method-pill">Logistic regression</span><span class="method-pill">Elo</span><span class="method-pill">Poisson</span><span class="method-pill">Calibration</span></div><p>A live research dashboard combining baseball ratings, scoring distributions, calibrated probabilities, market-implied odds, Kelly sizing, and downloadable paper-trading records.</p><div class="project-credit">Independent project. Research and paper trading only.</div><div class="project-links"><a href="https://krisfigueiredo-ui.github.io/MLB-Predictor/" target="_blank" rel="noreferrer">Live app</a><a href="projects.html#mlb">Methods</a><a href="https://github.com/krisfigueiredo-ui/MLB-Predictor" target="_blank" rel="noreferrer">Repository</a></div></article>
         <article class="project"><div class="project-meta"><span>Systematic research</span><span>2026</span></div><h3>Quant Desk</h3><div class="method-list"><span class="method-pill">Factor models</span><span class="method-pill">Walk-forward</span><span class="method-pill">Bootstrap</span><span class="method-pill">ML</span></div><p>A paper-trading workspace for cross-sectional signals, risk-aware allocation, purged validation, read-only account monitoring, and dry-run operations.</p><div class="project-credit">Independent project. No live-money execution path.</div><div class="project-links"><a href="https://krisfigueiredo-ui.github.io/Quant-Desk/" target="_blank" rel="noreferrer">Live app</a><a href="projects.html#quant">Methods</a><a href="https://github.com/krisfigueiredo-ui/Quant-Desk" target="_blank" rel="noreferrer">Repository</a></div></article>
         <article class="project"><div class="project-meta"><span>RAG &amp; talent analytics</span><span>2026</span></div><h3>HireSense</h3><div class="method-list"><span class="method-pill">RAG</span><span class="method-pill">Embeddings</span><span class="method-pill">Cosine similarity</span><span class="method-pill">LLM</span></div><p>A candidate-analysis prototype combining document retrieval, similarity scoring, explainable rankings, and structured interview prompts.</p><div class="project-credit">Team: Waleed El-Jack, Kristofor Figueiredo, Kevin Ordet, and Jamie Shook.</div><div class="project-links"><a href="https://krisfigueiredo-ui.github.io/Hiresense-AI-umiami-/" target="_blank" rel="noreferrer">Live app</a><a href="projects.html#hiresense">Methods</a><a href="https://github.com/krisfigueiredo-ui/Hiresense-AI-umiami-" target="_blank" rel="noreferrer">Repository</a></div></article>
-        <article class="project"><div class="project-meta"><span>Supply chain</span><span>2025</span></div><h3>Inventory Planning</h3><div class="method-list"><span class="method-pill">ABC analysis</span><span class="method-pill">Safety stock</span><span class="method-pill">Forecasting</span><span class="method-pill">Simulation</span></div><p>A public, synthetic companion to a client-sponsored capstone: SKU segmentation, service-level targets, reorder logic, forecast tracking, and scenario analysis.</p><div class="project-credit">All public records are fictional. Original client data and deliverables remain private.</div><div class="project-links"><a href="tractor-synthetic-inventory.html" target="_blank" rel="noreferrer">Synthetic demo</a><a href="projects.html#tractor">Methods</a></div></article>
+        <article class="project"><div class="project-meta"><span>Real-world capstone</span><span>2025</span></div><h3>Tractor Inventory Planning</h3><div class="method-list"><span class="method-pill">ABC analysis</span><span class="method-pill">Safety stock</span><span class="method-pill">Forecasting</span><span class="method-pill">Simulation</span></div><p>Led a seven-person team developing a reusable SKU-level safety-stock strategy for a 27-product portfolio. The public companion uses fictional records to demonstrate the analytical approach.</p><div class="project-credit">Client-sponsored MSBA capstone. Client data and original deliverables remain private.</div><div class="project-links"><a href="tractor-synthetic-inventory.html" target="_blank" rel="noreferrer">Public demo</a><a href="projects.html#tractor">Methods</a><a href="https://github.com/krisfigueiredo-ui/enterprise-analytics-capstones" target="_blank" rel="noreferrer">Repository</a></div></article>
         <article class="project"><div class="project-meta"><span>Database architecture</span><span>WVU</span></div><h3>Surfside Surfboards</h3><div class="method-list"><span class="method-pill">MySQL</span><span class="method-pill">3NF</span><span class="method-pill">Views</span><span class="method-pill">Constraints</span></div><p>A normalized operating model for customers, board configurations, reusable components, orders, reviews, historical price snapshots, and quarterly reporting.</p><div class="project-credit">Original concept and business rules by Kristofor Figueiredo; SQL implementation reconstructed from the surviving brief.</div><div class="project-links"><a href="https://krisfigueiredo-ui.github.io/surfside-surfboards-database/" target="_blank" rel="noreferrer">Schema reference</a><a href="projects.html#surfside">Methods</a><a href="https://github.com/krisfigueiredo-ui/surfside-surfboards-database" target="_blank" rel="noreferrer">Repository</a></div></article>
-        <article class="project"><div class="project-meta"><span>Big data &amp; operations</span><span>UMiami</span></div><h3>Coffee Operations Modeling</h3><div class="method-list"><span class="method-pill">PySpark</span><span class="method-pill">Decision trees</span><span class="method-pill">Logistic regression</span><span class="method-pill">AUC</span></div><p>Modeled wait time and rewards membership across approximately 1.96 million transaction records, comparing interpretable and nonlinear approaches.</p><div class="project-credit">Team: Jamie Shook, Kristofor Figueiredo, and Kevin Ordet. Case study only; source dataset is unavailable.</div><div class="project-links"><a href="projects.html#coffee">Full case study</a></div></article>
-        <article class="project"><div class="project-meta"><span>Time series</span><span>UMiami</span></div><h3>Retail Job Openings Forecast</h3><div class="method-list"><span class="method-pill">SARIMA</span><span class="method-pill">ETS</span><span class="method-pill">STL</span><span class="method-pill">Rolling CV</span></div><p>A 12-month U.S. retail job-openings forecast comparing seasonal statistical models and a weighted ensemble under rolling-origin validation.</p><div class="project-credit">Team 67: Kristofor Figueiredo, Jamie Shook, Jorge Palau, and Gabriella Lerario. Case study only.</div><div class="project-links"><a href="projects.html#retail-forecast">Full case study</a></div></article>
-        <article class="project"><div class="project-meta"><span>Classification</span><span>UMiami</span></div><h3>Internet Service Churn</h3><div class="method-list"><span class="method-pill">Gradient boosting</span><span class="method-pill">Feature engineering</span><span class="method-pill">ROC-AUC</span><span class="method-pill">Thresholds</span></div><p>A churn-classification workflow with imputation, encoding, stratified validation, feature importance, ROC analysis, and operating-threshold sensitivity.</p><div class="project-credit">Individual academic project by Kristofor Figueiredo. Case study only.</div><div class="project-links"><a href="projects.html#churn">Full case study</a></div></article>
-        <article class="project"><div class="project-meta"><span>Banking analytics</span><span>Synthetic</span></div><h3>Portfolio &amp; Risk Dashboard</h3><div class="method-list"><span class="method-pill">DAX</span><span class="method-pill">SQL</span><span class="method-pill">KPI design</span><span class="method-pill">Risk monitoring</span></div><p>A fictional portfolio dashboard demonstrating deposit and loan trends, margin, delinquency, digital adoption, metric definitions, and example DAX measures.</p><div class="project-credit">Synthetic demonstration only. It does not use or reproduce CNB data, systems, reports, or NDA-covered work.</div><div class="project-links"><a href="cnb-synthetic-dashboard.html" target="_blank" rel="noreferrer">Synthetic demo</a><a href="projects.html#banking">Methods</a></div></article>
+        <article class="project"><div class="project-meta"><span>Big data &amp; operations</span><span>UMiami</span></div><h3>Coffee Operations Modeling</h3><div class="method-list"><span class="method-pill">PySpark</span><span class="method-pill">Decision trees</span><span class="method-pill">Logistic regression</span><span class="method-pill">AUC</span></div><p>Modeled wait time and rewards membership across approximately 1.96 million transaction records, comparing interpretable and nonlinear approaches.</p><div class="project-credit">Team: Jamie Shook, Kristofor Figueiredo, and Kevin Ordet. The missing source dataset is disclosed in the repository.</div><div class="project-links"><a href="projects.html#coffee">Case study</a><a href="https://github.com/krisfigueiredo-ui/coffee-operations-pyspark" target="_blank" rel="noreferrer">Repository</a></div></article>
+        <article class="project"><div class="project-meta"><span>Time series</span><span>UMiami</span></div><h3>Retail Job Openings Forecast</h3><div class="method-list"><span class="method-pill">SARIMA</span><span class="method-pill">ETS</span><span class="method-pill">STL</span><span class="method-pill">Rolling CV</span></div><p>A 12-month U.S. retail job-openings forecast comparing seasonal statistical models and a weighted ensemble under rolling-origin validation.</p><div class="project-credit">Team 67: Kristofor Figueiredo, Jamie Shook, Jorge Palau, and Gabriella Lerario.</div><div class="project-links"><a href="projects.html#retail-forecast">Case study</a><a href="https://github.com/krisfigueiredo-ui/retail-job-openings-forecast" target="_blank" rel="noreferrer">Repository</a></div></article>
+        <article class="project"><div class="project-meta"><span>Classification</span><span>UMiami</span></div><h3>Internet Service Churn</h3><div class="method-list"><span class="method-pill">Gradient boosting</span><span class="method-pill">Feature engineering</span><span class="method-pill">ROC-AUC</span><span class="method-pill">Thresholds</span></div><p>A churn-classification workflow with imputation, encoding, stratified validation, feature importance, ROC analysis, and operating-threshold sensitivity.</p><div class="project-credit">Individual academic project by Kristofor Figueiredo. The moderate holdout result is reported without inflation.</div><div class="project-links"><a href="projects.html#churn">Case study</a><a href="https://github.com/krisfigueiredo-ui/internet-service-churn-model" target="_blank" rel="noreferrer">Repository</a></div></article>
+        <article class="project"><div class="project-meta"><span>Real-world capstone</span><span>2026</span></div><h3>IT Asset Lifecycle &amp; Risk</h3><div class="method-list"><span class="method-pill">ServiceNow</span><span class="method-pill">Power BI</span><span class="method-pill">19 DAX measures</span><span class="method-pill">KPI audit</span></div><p>Contributed to a KPI audit across approximately 4,200 IT hardware assets, modeled lifecycle and end-of-life risk, surfaced legacy dependencies, and helped standardize executive reporting.</p><div class="project-credit">City National Bank of Florida MSBA capstone. Public demo values and DAX examples are fictional; original data and deliverables remain private.</div><div class="project-links"><a href="cnb-synthetic-dashboard.html" target="_blank" rel="noreferrer">Public demo</a><a href="projects.html#banking">Methods</a><a href="https://github.com/krisfigueiredo-ui/enterprise-analytics-capstones" target="_blank" rel="noreferrer">Repository</a></div></article>
       </div>
       <a class="case-study-link" href="projects.html">Explore every method, model decision, validation step, limitation, and team credit →</a>
     </section>
@@ -354,14 +370,30 @@
         orgs: [{ name: "The Kroger Co.", logo: "assets/logo-kroger.jpg" }]
       },
       miami: {
-        city: "Miami, Florida",
-        status: "2025–2026 · United States",
-        copy: "Graduate business analytics and performance-analysis experience in collegiate athletics.",
-        orgs: [{ name: "Miami Hurricanes Athletics", logo: "assets/logo-miami-hurricanes.jpg" }]
+        city: "Miami & Coral Gables, Florida",
+        status: "Graduate education · work · capstone",
+        copy: "M.S. in Business Analytics, collegiate athletics analysis, and a real-world IT asset risk capstone.",
+        orgs: [
+          { name: "University of Miami", logo: "assets/logo-miami-hurricanes.jpg" },
+          { name: "Miami Hurricanes Athletics", logo: "assets/logo-miami-hurricanes.jpg" },
+          { name: "City National Bank of Florida", logo: "assets/logo-cnb.svg" }
+        ]
+      },
+      morgantown: {
+        city: "Morgantown, West Virginia",
+        status: "Undergraduate education · United States",
+        copy: "B.S.B.A. in Supply Chain Management with a Finance minor at West Virginia University.",
+        orgs: [{ name: "West Virginia University", mark: "WVU" }]
+      },
+      colorado: {
+        city: "Greenwood Village, Colorado",
+        status: "Real-world capstone partner · United States",
+        copy: "Inventory planning and safety-stock strategy developed through a seven-person MSBA capstone team.",
+        orgs: [{ name: "Tractor Beverage Company", logo: "assets/logo-tractor-official.svg", onDark: true }]
       },
       sydney: {
         city: "Sydney, Australia",
-        status: "2021–2025 · Australia",
+        status: "2021-2025 · Australia",
         copy: "Retail operations, global supply-chain analysis, and finance experience across three organizations.",
         orgs: [
           { name: "Rebel Sport", logo: "assets/logo-rebel-sport.jpg" },
@@ -380,9 +412,15 @@
       orgs.replaceChildren(...location.orgs.map((org) => {
         const row = document.createElement("div");
         row.className = "map-org";
-        const image = document.createElement("img");
-        image.src = org.logo;
-        image.alt = "";
+        const image = org.logo ? document.createElement("img") : document.createElement("span");
+        if (org.logo) {
+          image.src = org.logo;
+          image.alt = "";
+          if (org.onDark) image.className = "on-dark";
+        } else {
+          image.className = "map-mark";
+          image.textContent = org.mark;
+        }
         const name = document.createElement("strong");
         name.textContent = org.name;
         row.append(image, name);
