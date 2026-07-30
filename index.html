@@ -165,15 +165,17 @@
     .loc-credit{font-size:9.5px;color:#5f7492;margin-top:14px}
 
     /* ── featured work ── */
-    .case{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:56px;align-items:center;padding:64px 0;border-bottom:1px solid var(--line)}
-    .case:first-of-type{padding-top:0}
+    .case{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:60px;align-items:center;padding:72px 0;border-bottom:1px solid var(--line)}
+    .case:first-of-type{padding-top:12px}
     .case.flip .case-media{order:2}
-    .case-media{position:relative;border:1px solid var(--line-strong);background:#fff}
+    .case-media{position:relative;border:1px solid var(--ink);background:#fff;box-shadow:14px 14px 0 var(--paper-deep),14px 14px 0 1px var(--line-strong)}
+    .case.flip .case-media{box-shadow:-14px 14px 0 var(--paper-deep),-14px 14px 0 1px var(--line-strong)}
     .case-media img{width:100%;height:auto;display:block}
-    .case-media .media-tag{position:absolute;top:0;left:0;transform:translateY(-50%);margin-left:18px;font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:4px 9px}
-    .case-index{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--faint);text-transform:uppercase;margin-bottom:14px}
-    .case-index b{color:var(--accent);font-weight:600}
-    .case h3{font-size:clamp(24px,2.6vw,32px);font-weight:580;letter-spacing:-.018em;margin-bottom:14px}
+    .case-media .media-tag{position:absolute;top:0;left:0;transform:translateY(-50%);margin-left:18px;font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;background:var(--accent);color:#fff;padding:4px 10px}
+    .case-index{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--faint);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:12px}
+    .case-index::after{content:"";flex:1;height:1px;background:var(--line);max-width:120px}
+    .case-index b{font-family:var(--serif);font-size:26px;color:var(--accent);font-weight:560;letter-spacing:0}
+    .case h3{font-size:clamp(28px,3vw,38px);font-weight:580;letter-spacing:-.02em;margin-bottom:16px}
     .case-partner{display:flex;align-items:center;gap:10px;margin:0 0 16px}
     .case-partner img{height:22px;width:auto;max-width:150px;object-fit:contain}
     .case-partner.dark-logo img{background:var(--navy-2);padding:5px 8px;border-radius:3px}
@@ -182,13 +184,15 @@
     .case dt{font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--faint)}
     .case dd{margin:2px 0 0;font-size:13.5px;line-height:1.6;color:#3c4046}
     .case-tools{font-family:var(--mono);font-size:10.5px;color:var(--muted);letter-spacing:.02em}
-    .case-links{display:flex;gap:20px;margin-top:22px;flex-wrap:wrap}
+    .case-links{display:flex;gap:18px;margin-top:24px;flex-wrap:wrap;align-items:center}
+    .case-links .button{min-height:36px;padding:7px 16px;font-size:12px}
 
     /* ── archive ── */
     .archive{border-top:1px solid var(--line)}
-    .arch-row{display:grid;grid-template-columns:200px minmax(0,1.15fr) minmax(0,1.35fr) auto;gap:28px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--line)}
+    .arch-row{display:grid;grid-template-columns:200px minmax(0,1.15fr) minmax(0,1.35fr) auto;gap:28px;align-items:baseline;padding:24px 12px;margin:0 -12px;border-bottom:1px solid var(--line);transition:background .15s}
+    .arch-row:hover{background:rgba(168,95,20,.045)}
     .arch-cat{font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--faint)}
-    .arch-name{font-family:var(--serif);font-size:18px;font-weight:580;letter-spacing:-.012em}
+    .arch-name{font-family:var(--serif);font-size:20px;font-weight:580;letter-spacing:-.012em}
     .arch-name small{display:block;font-family:var(--sans);font-size:11px;font-weight:500;color:var(--faint);margin-top:3px}
     .arch-desc{font-size:12.5px;line-height:1.55;color:var(--muted)}
     .arch-links{display:flex;gap:14px;white-space:nowrap}
@@ -341,7 +345,7 @@
         <p class="kicker">About</p>
         <div class="about-copy reveal">
           <h2 class="about-lead" id="about-heading">Analytics grounded in how sourcing, supply chains, and operating teams actually make decisions.</h2>
-          <p>I'm a Sourcing Category Management Analyst at Kroger with a background in business analytics, strategic sourcing, supply chain management, and data-driven decision-making. I recently earned a Master of Science in Business Analytics from the University of Miami Herbert Business School, building on my Bachelor of Science in Business Administration in Supply Chain Management from West Virginia University.</p>
+          <p>I'm a Sourcing Category Management Analyst at Kroger with a background in business analytics, strategic sourcing, supply chain management, and data-driven decision-making. I'm a proud alum of the University of Miami Herbert Business School, where I earned my Master of Science in Business Analytics, and of West Virginia University, where I earned my Bachelor of Science in Business Administration in Supply Chain Management with a minor in Finance.</p>
           <p>In my current role at Kroger, I support technology sourcing initiatives by analysing spend, supplier performance, market trends, and procurement data to help inform sourcing strategies and business decisions. I work with cross-functional stakeholders across technology and procurement, leveraging tools such as Coupa, ServiceNow, Excel, and data analysis to identify opportunities for optimization and drive value.</p>
           <p>My experience spans analytics, sourcing, operations, and business performance across both corporate and athletic environments. As a Data Analytics Intern with the University of Miami Hurricanes Baseball program, I translated player and performance data into actionable insights that supported evaluation and decision-making. I also served as an Athletic Tutor and Mentor, helping student-athletes succeed in quantitative and business-focused coursework.</p>
           <p>Previously, I completed internships with Woolworths Group and Employers Mutual Limited (EML), where I worked across operational analysis, reporting, payroll, compliance, and business support functions. These experiences strengthened my analytical mindset, attention to detail, and ability to communicate insights to diverse stakeholders in fast-paced environments.</p>
@@ -359,6 +363,13 @@
               <li>Supply chain &amp; inventory planning</li>
               <li>Performance &amp; sports analytics</li>
               <li>Applied machine learning</li>
+            </ul>
+          </div>
+          <div class="aside-block">
+            <h3>Alma maters</h3>
+            <ul>
+              <li><span class="strong">University of Miami</span> — M.S. Business Analytics</li>
+              <li><span class="strong">West Virginia University</span> — B.S.B.A. Supply Chain Management</li>
             </ul>
           </div>
           <div class="aside-block">
@@ -523,7 +534,7 @@
           </dl>
           <p class="case-tools" style="margin-top:14px">JavaScript · Logistic regression · Elo · Poisson · Kelly sizing</p>
           <div class="case-links">
-            <a class="text-link" href="https://krisfigueiredo-ui.github.io/MLB-Predictor/" target="_blank" rel="noreferrer">Live app</a>
+            <a class="button" href="https://krisfigueiredo-ui.github.io/MLB-Predictor/" target="_blank" rel="noreferrer">Open live app</a>
             <a class="text-link" href="projects.html#mlb">Methods</a>
             <a class="text-link" href="https://github.com/krisfigueiredo-ui/MLB-Predictor" target="_blank" rel="noreferrer">Repository</a>
           </div>
@@ -549,7 +560,7 @@
           </dl>
           <p class="case-tools" style="margin-top:14px">ServiceNow · Power BI · DAX · KPI design</p>
           <div class="case-links">
-            <a class="text-link" href="cnb-synthetic-dashboard.html" target="_blank" rel="noreferrer">Case study</a>
+            <a class="button" href="cnb-synthetic-dashboard.html" target="_blank" rel="noreferrer">Open case study</a>
             <a class="text-link" href="projects.html#banking">Methods</a>
             <a class="text-link" href="https://github.com/krisfigueiredo-ui/enterprise-analytics-capstones" target="_blank" rel="noreferrer">Repository</a>
           </div>
@@ -575,7 +586,7 @@
           </dl>
           <p class="case-tools" style="margin-top:14px">Excel · ABC analysis · Safety stock · Monte Carlo simulation</p>
           <div class="case-links">
-            <a class="text-link" href="tractor-synthetic-inventory.html" target="_blank" rel="noreferrer">Dashboard</a>
+            <a class="button" href="tractor-synthetic-inventory.html" target="_blank" rel="noreferrer">Open dashboard</a>
             <a class="text-link" href="projects.html#tractor">Methods</a>
             <a class="text-link" href="https://github.com/krisfigueiredo-ui/enterprise-analytics-capstones" target="_blank" rel="noreferrer">Repository</a>
           </div>
