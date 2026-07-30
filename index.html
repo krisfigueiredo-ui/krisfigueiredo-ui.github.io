@@ -226,8 +226,9 @@
     .contact h2{font-size:clamp(30px,4vw,50px);line-height:1.08;letter-spacing:-.024em;max-width:17ch}
     .contact-sub{font-size:15px;color:var(--muted);margin:18px 0 0;max-width:34em}
     .contact-rows{margin-top:38px;border-top:1px solid var(--line);max-width:560px}
-    .contact-row{display:grid;grid-template-columns:110px 1fr;gap:20px;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--line)}
-    .contact-row .k{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--faint)}
+    .contact-row{display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}
+    .contact-row .k{font-family:var(--mono);font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--faint);display:inline-flex;align-items:center;gap:9px}
+    .c-ic{width:16px;height:16px;flex:0 0 auto;color:var(--muted)}
     .contact-row a{font-size:14px;font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--accent);padding-bottom:1px;width:fit-content}
     .contact-row a:hover{color:var(--accent-ink)}
     .contact-row .plain{font-size:14px;color:#3c4046}
@@ -296,6 +297,7 @@
         <a href="#experience">Experience</a>
         <a href="#locations">Locations</a>
         <a href="#work">Work</a>
+        <a href="projects.html">Methods</a>
         <a href="#education">Education</a>
         <a href="assets/kristofor-figueiredo-resume.pdf" target="_blank" rel="noreferrer">Résumé</a>
         <a class="nav-cta" href="#contact">Contact</a>
@@ -713,11 +715,11 @@
           <h2 id="contact-heading">If you're working on analytics, sourcing, or supply chain problems, I'd like to hear about them.</h2>
           <p class="contact-sub">Email is the fastest way to reach me. I'm based in Cincinnati, Ohio.</p>
           <div class="contact-rows">
-            <div class="contact-row"><span class="k">Email</span><a href="mailto:krisfigueiredo2002@gmail.com">krisfigueiredo2002@gmail.com</a></div>
-            <div class="contact-row"><span class="k">LinkedIn</span><a href="https://www.linkedin.com/in/kristofor-f/" target="_blank" rel="noreferrer">linkedin.com/in/kristofor-f</a></div>
-            <div class="contact-row"><span class="k">GitHub</span><a href="https://github.com/krisfigueiredo-ui" target="_blank" rel="noreferrer">github.com/krisfigueiredo-ui</a></div>
-            <div class="contact-row"><span class="k">Résumé</span><a href="assets/kristofor-figueiredo-resume.pdf" target="_blank" rel="noreferrer">Download PDF</a></div>
-            <div class="contact-row"><span class="k">Location</span><span class="plain">Cincinnati, Ohio · United States</span></div>
+            <div class="contact-row"><span class="k"><svg class="c-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</span><a href="mailto:krisfigueiredo2002@gmail.com">krisfigueiredo2002@gmail.com</a></div>
+            <div class="contact-row"><span class="k"><svg class="c-ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V8.98h3.42v1.57h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.29ZM5.32 7.41a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.1 20.45H3.54V8.98H7.1v11.47Z"/></svg>LinkedIn</span><a href="https://www.linkedin.com/in/kristofor-f/" target="_blank" rel="noreferrer">linkedin.com/in/kristofor-f</a></div>
+            <div class="contact-row"><span class="k"><svg class="c-ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.49v-1.91c-2.78.62-3.37-1.21-3.37-1.21-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .08 1.53 1.06 1.53 1.06.9 1.57 2.35 1.12 2.92.86.09-.66.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 8.92a9.3 9.3 0 0 1 2.5.34c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.35 4.8-4.58 5.05.36.32.68.94.68 1.9v2.82c0 .27.18.59.69.49A10.24 10.24 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"/></svg>GitHub</span><a href="https://github.com/krisfigueiredo-ui" target="_blank" rel="noreferrer">github.com/krisfigueiredo-ui</a></div>
+            <div class="contact-row"><span class="k"><svg class="c-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v10.55M12 13.55 8.5 10M12 13.55 15.5 10M5 16v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg>Résumé</span><a href="assets/kristofor-figueiredo-resume.pdf" target="_blank" rel="noreferrer">Download PDF</a></div>
+            <div class="contact-row"><span class="k"><svg class="c-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Location</span><span class="plain">Cincinnati, Ohio · United States</span></div>
           </div>
         </div>
       </div>
