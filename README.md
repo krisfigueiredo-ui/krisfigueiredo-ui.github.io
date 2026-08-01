@@ -20,6 +20,11 @@ The site is based on the owner-provided résumé and verified public LinkedIn ex
 
 The IT asset-risk page accompanies a University of Miami M.S. in Business Analytics capstone. The inventory-planning page accompanies a West Virginia University B.S.B.A. Supply Chain Management capstone. Their demonstration records, public metrics, and DAX examples were created for the portfolio and do not reproduce client systems, source data, or proprietary deliverables.
 
+The capstones are maintained in separate public repositories:
+
+- [IT Asset Lifecycle and Risk](https://github.com/krisfigueiredo-ui/cnb-it-asset-lifecycle-risk)
+- [Tractor Beverage Inventory Planning](https://github.com/krisfigueiredo-ui/tractor-inventory-planning)
+
 ## Portfolio structure
 
 - `index.html` — profile, experience, interactive work map, selected projects, and employer/client context
