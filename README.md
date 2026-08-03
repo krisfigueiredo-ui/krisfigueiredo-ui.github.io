@@ -4,6 +4,8 @@ Personal portfolio for Kristofor Figueiredo, focused on business analytics, tech
 
 The site includes locally hosted profile photography, employer and university logos, an interactive global work map, technical case studies, and links to live project demonstrations and source repositories.
 
+The independent project archive also includes [Northstar Market Intelligence](https://github.com/krisfigueiredo-ui/market-intelligence-rag), a Python portfolio analytics and cited RAG research platform.
+
 **Live site:** https://krisfigueiredo-ui.github.io/
 
 ## Local preview
